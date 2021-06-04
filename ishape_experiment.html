@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ishape</title>
+    <style>.title{display:inline-block;width:100px;text-align:center;</style>
+    <style>li {list-style:none;display:inline-block;width:100px;}</style>
+    <style>li img{width:100%;}</style>
+    <style>.img-box img {position:relative;width:100%;top:100%;}</style>
+    <style>.content {width:100%;text-align:center;}</style>
+    <style>.headline {font-size:20px;text-align:center;font-family: Arial, Helvetica, serif;}</style>
+    <style>.title-box {text-align:center;font-family: Arial, Helvetica, serif;font-size:10px;}</style>
+    <style>.ul-img {font-size:1;}</style>
+  </head>
+  <body>
+    <div class="headline">
+      <p></p>iShape-Antenna
+      <p></p>
+    </div>
+    <div class="title-box">
+      <div class="title">Input</div>
+      <div class="title">SOLOv2</div>
+      <div class="title">PolarMask</div>
+      <div class="title">SE</div>
+      <div class="title">Mask RCNN</div>
+      <div class="title">Ours</div>
+      <div class="title">Ground Truth</div>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/antenna/input_4139.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/solov2_4139.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/polar_4139.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/SE_4139.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/maskrcnn_4139.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/affinity_4139.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/gt_4139.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/antenna/input_4240.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/solov2_4240.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/polar_4240.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/SE_4240.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/maskrcnn_4240.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/affinity_4240.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/gt_4240.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/antenna/input_4096.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/solov2_4096.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/polar_4096.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/SE_4096.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/maskrcnn_4096.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/affinity_4096.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/gt_4096.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/antenna/input_4251.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/solov2_4251.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/polar_4251.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/SE_4251.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/maskrcnn_4251.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/affinity_4251.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/antenna/gt_4251.jpg">
+      </li>
+    </div>
+    <div class="headline">
+      <p></p>iShape-Branch
+      <p></p>
+    </div>
+    <div class="title-box">
+      <div class="title">Input</div>
+      <div class="title">SOLOv2</div>
+      <div class="title">PolarMask</div>
+      <div class="title">SE</div>
+      <div class="title">Mask RCNN</div>
+      <div class="title">Ours</div>
+      <div class="title">Ground Truth</div>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/branch/input_416.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/solov2_416.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/polar_416.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/SE_416.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/maskrcnn_416.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/affinity_416.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/gt_416.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/branch/input_90.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/solov2_90.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/polar_90.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/SE_90.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/maskrcnn_90.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/affinity_90.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/gt_90.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/branch/input_262.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/solov2_262.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/polar_262.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/SE_262.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/maskrcnn_262.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/affinity_262.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/gt_262.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/branch/input_198.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/solov2_198.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/polar_198.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/SE_198.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/maskrcnn_198.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/affinity_198.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/branch/gt_198.jpg">
+      </li>
+    </div>
+    <div style="page-break-after:always;"></div>
+    <div style="page-break-before:always;"></div>
+    <div class="headline">
+      <p></p>iShape-Fence
+      <p></p>
+    </div>
+    <div class="title-box">
+      <div class="title">Input</div>
+      <div class="title">SOLOv2</div>
+      <div class="title">PolarMask</div>
+      <div class="title">SE</div>
+      <div class="title">Mask RCNN</div>
+      <div class="title">Ours</div>
+      <div class="title">Ground Truth</div>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/fence/input_2182.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/solov2_2182.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/polar_2182.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/SE_2182.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/maskrcnn_2182.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/affinity_2182.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/gt_2182.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/fence/input_2071.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/solov2_2071.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/polar_2071.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/SE_2071.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/maskrcnn_2071.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/affinity_2071.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/gt_2071.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/fence/input_2016.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/solov2_2016.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/polar_2016.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/SE_2016.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/maskrcnn_2016.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/affinity_2016.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/gt_2016.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/fence/input_2093.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/solov2_2093.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/polar_2093.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/SE_2093.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/maskrcnn_2093.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/affinity_2093.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/fence/gt_2093.jpg">
+      </li>
+    </div>
+    <div class="headline">
+      <p></p>iShape-Hanger
+      <p></p>
+    </div>
+    <div class="title-box">
+      <div class="title">Input</div>
+      <div class="title">SOLOv2</div>
+      <div class="title">PolarMask</div>
+      <div class="title">SE</div>
+      <div class="title">Mask RCNN</div>
+      <div class="title">Ours</div>
+      <div class="title">Ground Truth</div>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/hanger/input_2273.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/solov2_2273.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/polar_2273.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/SE_2273.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/maskrcnn_2273.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/affinity_2273.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/gt_2273.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/hanger/input_2404.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/solov2_2404.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/polar_2404.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/SE_2404.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/maskrcnn_2404.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/affinity_2404.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/gt_2404.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/hanger/input_2092.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/solov2_2092.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/polar_2092.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/SE_2092.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/maskrcnn_2092.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/affinity_2092.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/gt_2092.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/hanger/input_2372.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/solov2_2372.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/polar_2372.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/SE_2372.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/maskrcnn_2372.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/affinity_2372.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/hanger/gt_2372.jpg">
+      </li>
+    </div>
+    <div style="page-break-after:always;"></div>
+    <div style="page-break-before:always;"></div>
+    <div class="headline">
+      <p></p>iShape-Log
+      <p></p>
+    </div>
+    <div class="title-box">
+      <div class="title">Input</div>
+      <div class="title">SOLOv2</div>
+      <div class="title">PolarMask</div>
+      <div class="title">SE</div>
+      <div class="title">Mask RCNN</div>
+      <div class="title">Ours</div>
+      <div class="title">Ground Truth</div>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/logs/input_441.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/solov2_441.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/polar_441.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/SE_441.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/maskrcnn_441.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/affinity_441.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/gt_441.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/logs/input_410.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/solov2_410.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/polar_410.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/SE_410.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/maskrcnn_410.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/affinity_410.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/gt_410.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/logs/input_95.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/solov2_95.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/polar_95.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/SE_95.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/maskrcnn_95.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/affinity_95.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/gt_95.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/logs/input_79.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/solov2_79.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/polar_79.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/SE_79.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/maskrcnn_79.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/affinity_79.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/logs/gt_79.jpg">
+      </li>
+    </div>
+    <div class="headline">
+      <p></p>iShape-Wire
+      <p></p>
+    </div>
+    <div class="title-box">
+      <div class="title">Input</div>
+      <div class="title">SOLOv2</div>
+      <div class="title">PolarMask</div>
+      <div class="title">SE</div>
+      <div class="title">Mask RCNN</div>
+      <div class="title">Ours</div>
+      <div class="title">Ground Truth</div>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/wire/input_173.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/solov2_173.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/polar_173.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/SE_173.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/maskrcnn_173.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/affinity_173.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/gt_173.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/wire/input_178.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/solov2_178.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/polar_178.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/SE_178.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/maskrcnn_178.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/affinity_178.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/gt_178.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/wire/input_222.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/solov2_222.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/polar_222.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/SE_222.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/maskrcnn_222.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/affinity_222.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/gt_222.jpg">
+      </li>
+    </div>
+    <div class="content">
+      <li>
+        <img src="./resize_vis_tmp/wire/input_140.png">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/solov2_140.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/polar_140.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/SE_140.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/maskrcnn_140.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/affinity_140.jpg">
+      </li>
+      <li>
+        <img src="./resize_vis_tmp/wire/gt_140.jpg">
+      </li>
+    </div>
+    <div style="page-break-after:always;"></div>
+    <div style="page-break-before:always;"></div>
+  </body>
+</html>
