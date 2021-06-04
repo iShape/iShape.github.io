@@ -99,9 +99,9 @@ CC BY-NC-SA 4.0
 
 <div style="text-align: justify">
 
-[**iShape-Leaderboard**](https://github.com/RPC-Dataset/RPC-Leaderboard)
+[**iShape-Leaderboard**]()
 
-If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  [`rpctool`](https://github.com/DIYer22/retail_product_checkout_tools) (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click [here](https://github.com/RPC-Dataset/RPC-Leaderboard/issues) to submit.
+If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  [`rpctool`]() (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click [here]() to submit.
 
 </div>
 
@@ -110,7 +110,7 @@ If you have been successful in creating a model based on the training set and it
 
 <div style="text-align: justify">
 
-This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Dr. Lei Yang (yanglei@megvii.com).
+This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Lei Yang (yanglei@megvii.com).
 
 </div>
 
