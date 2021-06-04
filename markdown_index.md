@@ -32,8 +32,8 @@
 
 <div align="center">
 
-<a href="https://github.com/iShape/iShape.github.io/tree/main/image/ishape_img/paper.png">
-    <img style="width:200px" src="/home/yanziwei/PycharmProjects/RPC/RPC-Dataset.github.io/ishape_img/paper.png">
+<a href="image/ishape_img/paper.png">
+    <img style="width:200px" src="image/ishape_img/paper.png">
 </a>   
 
 
@@ -44,7 +44,7 @@
 
 <div align="center">
 
-![](https://github.com/iShape/iShape.github.io/tree/main/image/ishape_img/ishape.png)
+![](image/ishape_img/ishape.png)
 
 [**Dataset on Kaggle => "iShape dataset"**]
 (15GB)
@@ -90,7 +90,7 @@ CC BY-NC-SA 4.0
 
 <div align="center">
 
-[![](https://github.com/iShape/iShape.github.io/tree/main/image/ishape_img/results.png)](https://github.com/iShape/iShape.github.io/tree/main/ishape_experiment.html)
+[![](image/ishape_img/results.png)](ishape_experiment.html)
 
 </div>
 
