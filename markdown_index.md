@@ -11,7 +11,7 @@
 
 # Irregular Shape Instance Segmentation: Dataset and Baseline
 
-**[Lei Yang<sup>1*</sup>](https://github.com/DIYer22) &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>1</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>3</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>4</sup> Haoqiang Fan<sup>1</sup>**
+**[Lei Yang<sup>1</sup>](https://github.com/DIYer22) &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>1</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>3</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>4</sup> Haoqiang Fan<sup>1</sup>**
 
 <sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China    
 <sup>2</sup>School of Software, Beihang University, Beijing, China    
@@ -21,7 +21,7 @@
 
 ---
 
- ### [Abstract](#1-abstract) | [Paper](#2-paper) | [Dataset](#3-our-rpc-dataset) | [Baselines](#4-proposed-baseline-method-on-the-rpc-dataset) | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool) 
+ ### [Abstract](#1-abstract) | [Paper](#2-paper) | [Dataset](#3-our-iShape-dataset) | [Baselines](#4-proposed-baseline-method-on-the-iShape-dataset) | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool) 
 </div>
 
 ## 1. Abstract
@@ -32,7 +32,7 @@
 
 <div align="center">
 
-<a href="https://github.com/iShape/">
+<a href="https://github.com/iShape/iShape.github.io/tree/main/image/ishape_img/paper.png">
     <img style="width:200px" src="/home/yanziwei/PycharmProjects/RPC/RPC-Dataset.github.io/ishape_img/paper.png">
 </a>   
 
@@ -44,15 +44,12 @@
 
 <div align="center">
 
-![](/home/yanziwei/PycharmProjects/RPC/RPC-Dataset.github.io/ishape_img/ishape.png)
-<!-- (https://www.kaggle.com/diyer22/retail-product-checkout-dataset)      -->
+![](https://github.com/iShape/iShape.github.io/tree/main/image/ishape_img/ishape.png)
 
 [**Dataset on Kaggle => "iShape dataset"**]
-(1GB)
+(15GB)
 
 </div>
-
-\***Notice**: If downloading from Kaggle is not accessable, you can alternatively download the dataset using [Baidu Drive](https://pan.baidu.com/s/1vrrLaSpJe5JxT3zhYfOaog).
 
 #### 3.1 Dataset license:  
 [![](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)    
@@ -93,7 +90,7 @@ CC BY-NC-SA 4.0
 
 <div align="center">
 
-[![](/home/yanziwei/PycharmProjects/RPC/ishape/ishape_img/results.png)](/home/yanziwei/PycharmProjects/RPC/ishape/ishape_experiment.html)
+[![](https://github.com/iShape/iShape.github.io/tree/main/image/ishape_img/results.png)](https://github.com/iShape/iShape.github.io/tree/main/ishape_experiment.html)
 
 </div>
 
@@ -108,19 +105,12 @@ If you have been successful in creating a model based on the training set and it
 
 </div>
 
-## 6. iShape-tool
+
+## 6. ATTN
 
 <div style="text-align: justify">
 
-[`rpctool`](https://github.com/DIYer22/retail_product_checkout_tools): A Python package for evaluating your methods on the RPC dataset. It can return several evaluation metrics (listed in the aforementioned table in Sec. 4.2). More information can be found in [`rpctool`](https://github.com/DIYer22/retail_product_checkout_tools).
-
-</div>
-
-## 7. ATTN
-
-<div style="text-align: justify">
-
-This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Dr. Xiu-Shen Wei (weixs.gm [at] gmail.com).
+This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Dr. Lei Yang (yanglei@megvii.com).
 
 </div>
 
