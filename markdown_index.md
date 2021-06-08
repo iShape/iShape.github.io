@@ -46,8 +46,8 @@
 
 ![](image/ishape_img/ishape.png)
 
-[**Dataset on Kaggle => "iShape dataset"**]
-(15GB)
+### Download iShape dataset: => [ishape_dataset.tar (4.5GB)](http://47.103.201.240:9000/ishape/ishape_dataset.tar)   
+### Browse iShape dataset online: => [ishape_dataset](http://47.103.201.240:9000/ishape/ishape_dataset)
 
 </div>
 
