@@ -62,11 +62,11 @@ CC BY-NC-SA 4.0
 | **# sub-datasets** | **# imgages** | **# instances** | **# instance/image** |
 | ------------------ | ------------- | --------------- | -------------------- |
 | iShape-Antenna     | 370           | 3,036           | 8.20                 |
-| iShape-Branch      | 2,500         | 16,300          | 6.52                 |
-| iShape-Fence       | 2,500         | 7,115           | 2.84                 |
-| iShape-Hanger      | 2,500         | 25,371          | 10.14                |
-| iShape-Log         | 2,500         | 68,025          | 27.21                |
-| iShape-Wire        | 2,500         | 14,802          | 5.92                 |
+| iShape-Branch      | 2,500         | 26,046          | 10.14                |
+| iShape-Fence       | 2,500         | 7,870           | 3.15                 |
+| iShape-Hanger      | 2,500         | 49,275          | 19,71                |
+| iShape-Log         | 2,500         | 72,144          | 28.86                |
+| iShape-Wire        | 2,500         | 17,469          | 6.99                 |
 
 </div>
 
@@ -78,11 +78,12 @@ CC BY-NC-SA 4.0
 
 | Method            | Backbone  | Antenna | Branch | Fence | Hanger | Log  | Wire | Average |
 | ----------------- | --------- | ------- | ------ | ----- | ------ | ---- | ---- | ------- |
-| SOLOv2            | ResNet-50 | 1.7     | 31.1   | 0.0   | 51.7   | 0.1  | 8.07 | 15.45   |
-| PolarMask         | ResNet-50 | 0.0     | 0.0    | 0.0   | 0.0    | 13.7 | 0.0  | 2.28    |
-| SpatialEmbeddings | -         | 2.3     | 0.0    | 0.0   | 47.4   | 17.0 | 0.5  | 11.20   |
-| Mask RCNN         | ResNet-50 | 16.9    | 9.2    | 0.0   | 34.6   | 28.9 | 1.4  | 15.16   |
-| ASIS(ours)        | ResNet-50 | 77.5    | 33.7   | 60.4  | 70.1   | 67.9 | 67.8 | 62.90   |
+| SOLOv2            | ResNet-50 | 6.6     | 27.5   | 0.0   | 28.8   | 22.2 | 0.0  | 14.07   |
+| PolarMask         | ResNet-50 | 0.0     | 0.0    | 0.0   | 0.0    | 18.6 | 0.0  | 3.10    |
+| SpatialEmbeddings | -         | 38.3    | 0.0    | 0.0   | 49.8   | 20.9 | 0.0  | 18.17   |
+| Mask RCNN         | ResNet-50 | 16.9    | 4.2    | 0.0   | 22.1   | 32.6 | 0.0  | 12.63   |
+| DETR              | ResNet-50 | 2.1     | 2.6    | 0.0   | 32.2   | 46.2 | 0.0  | 13.85   |
+| ASIS(ours)        | ResNet-50 | 77.5    | 25.1   | 37.1  | 53.1   | 69.3 | 64.9 | 54.50   |
 
 </div>
 
@@ -90,7 +91,7 @@ CC BY-NC-SA 4.0
 
 <div align="center">
 
-[![](image/ishape_img/results.png)](ishape_experiment.html)
+[![](image/ishape_img/result.png)](ishape_experiment.html)
 
 </div>
 
