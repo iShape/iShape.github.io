@@ -2,14 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <title>iShape datasets Project Page</title>
-    <meta name="description" content="Irregular Shape Instance Segmentation: Dataset and Baseline">
+    <meta name="description" content="Irregular Shape Instance Segmentation">
     <meta name="keywords" content="irregular Shape, instance segmentation, overlap, connected components">
     <link rel="shortcut icon" href="./favicon.ico">
 </head>
 
 <div align="center">
 
-# Irregular Shape Instance Segmentation: Dataset and Baseline
+# Irregular Shape Instance Segmentation
 
 **[Lei Yang<sup>1</sup>](https://github.com/DIYer22) &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>1</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>3</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>4</sup> Haoqiang Fan<sup>1</sup>**
 
@@ -37,7 +37,7 @@
 </a>   
 
 
-[**Paper on github => "Irregular Shape Instance Segmentation: Dataset and Baseline"**](https://github.com/iShape/)
+[**Paper on github => "Irregular Shape Instance Segmentation"**](https://github.com/iShape/)
 </div>
 
 ## 3. Our iShape dataset 
