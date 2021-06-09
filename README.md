@@ -1,8 +1,4 @@
-# Irregular Shape Instance Segmentation: Dataset and Baseline
-
-1. [Project Page](https://github.com/iShape/iShape.github.io)
-1. [RPC-Leaderboard](https://github.com/RPC-Dataset/RPC-Leaderboard)
-
+# Irregular Shape Instance Segmentation GitHub Pages
 
 </br>
 </br>
