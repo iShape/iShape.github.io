@@ -1,212 +1,263 @@
-<body><link rel="stylesheet" type="text/css" href="./github.css" id="_theme"><div id="_html" class="markdown-body">
-   <meta charset="UTF-8">
-   <title>iShape datasets Project Page</title>
-   <meta name="description" content="Irregular Shape Instance Segmentation: Dataset and Baseline">
-   <meta name="keywords" content="irregular Shape, instance segmentation, overlap, connected components">
-   <link rel="shortcut icon" href="./favicon.ico">
-
-
-<div align="center">
-
-<h1 id="irregular-shape-instance-segmentation-dataset-and-baseline">Irregular Shape Instance Segmentation: Dataset and Baseline</h1>
-<p><strong><a href="https://github.com/DIYer22">Lei Yang<sup>1</sup></a> &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>1</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>3</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>4</sup> Haoqiang Fan<sup>1</sup></strong></p>
-<p><sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China<br><sup>2</sup>School of Software, Beihang University, Beijing, China<br><sup>3</sup>Beijing University of Chemical Technology, Beijing, China<br><sup>4</sup>Kuaishou Technology, Beijing, China  </p>
-<!-- <sup>3</sup>School of Computer Science, The University of Adelaide, Adelaide, Australia -->
-
-<hr>
-<h3 id="abstract--paper--dataset--baselines--leaderboard--ishape-tool"><a href="#1-abstract">Abstract</a> | <a href="#2-paper">Paper</a> | <a href="#3-our-iShape-dataset">Dataset</a> | <a href="#4-proposed-baseline-method-on-the-iShape-dataset">Baselines</a> | <a href="#5-Leaderboard">Leaderboard</a> | <a href="#6-rpc-tool">iShape-tool</a></h3>
-</div>
-
-<h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span class="octicon octicon-link"></span></a>1. Abstract</h2>
-<p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to promote the study of instance segmentation for objects with irregular shapes. Our key observation is that though irregularly shaped objects widely exist in daily life and industrial scenarios, they received little attention in the instance segmentation field due to the lack of corresponding datasets. To fill this gap, we propose iShape, an irregular shape dataset for instance segmentation. Unlike most existing instance segmentation datasets of regular objects, iShape has many characteristics that challenge existing instance segmentation algorithms, such as large overlaps between bounding boxes of instances, extreme aspect ratios, and large numbers of connected components per instance. We benchmark popular instance segmentation methods on iShape and find their performance drop dramatically. Hence, we propose an affinity-based instance segmentation algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
-
-<h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2. Paper</h2>
-<div align="center">
-
-<a href="image/ishape_img/paper.png">
-   <img style="width:200px" src="image/ishape_img/paper.png">
-</a>   
-
-
-<p><a href="https://github.com/iShape/"><strong>Paper on github =&gt; "Irregular Shape Instance Segmentation: Dataset and Baseline"</strong></a></p>
-</div>
-
-<h2 id="3-our-ishape-dataset"><a class="anchor" name="3-our-ishape-dataset" href="#3-our-ishape-dataset"><span class="octicon octicon-link"></span></a>3. Our iShape dataset</h2>
-<div align="center">
-
-<p><img src="image/ishape_img/ishape.png" alt=""></p>
-<p>[<strong>Dataset on Kaggle =&gt; "iShape dataset"</strong>]
-(15GB)</p>
-</div>
-
-<h4 id="31-dataset-license"><a class="anchor" name="31-dataset-license" href="#31-dataset-license"><span class="octicon octicon-link"></span></a>3.1 Dataset license:</h4>
-<p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" alt=""></a><br>CC BY-NC-SA 4.0</p>
-<h4 id="32-overview-infomation-of-the-rpc-dataset"><a class="anchor" name="32-overview-infomation-of-the-rpc-dataset" href="#32-overview-infomation-of-the-rpc-dataset"><span class="octicon octicon-link"></span></a>3.2 Overview infomation of the RPC dataset</h4>
-<div align="center">
-
-<table>
-<thead>
-<tr>
-<th><strong># sub-datasets</strong></th>
-<th><strong># imgages</strong></th>
-<th><strong># instances</strong></th>
-<th><strong># instance/image</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>iShape-Antenna</td>
-<td>370</td>
-<td>3,036</td>
-<td>8.20</td>
-</tr>
-<tr>
-<td>iShape-Branch</td>
-<td>2,500</td>
-<td>26,046</td>
-<td>10.14</td>
-</tr>
-<tr>
-<td>iShape-Fence</td>
-<td>2,500</td>
-<td>7,870</td>
-<td>3.15</td>
-</tr>
-<tr>
-<td>iShape-Hanger</td>
-<td>2,500</td>
-<td>49,275</td>
-<td>19,71</td>
-</tr>
-<tr>
-<td>iShape-Log</td>
-<td>2,500</td>
-<td>72,144</td>
-<td>28.86</td>
-</tr>
-<tr>
-<td>iShape-Wire</td>
-<td>2,500</td>
-<td>17,469</td>
-<td>6.99</td>
-</tr>
-</tbody></table>
-</div>
-
-<h2 id="4-proposed-baseline-method-on-the-ishape-dataset"><a class="anchor" name="4-proposed-baseline-method-on-the-ishape-dataset" href="#4-proposed-baseline-method-on-the-ishape-dataset"><span class="octicon octicon-link"></span></a>4. Proposed baseline method on the iShape dataset</h2>
-<h4 id="41-experimental-results"><a class="anchor" name="41-experimental-results" href="#41-experimental-results"><span class="octicon octicon-link"></span></a>4.1 Experimental results</h4>
-<div align="center">
-
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Backbone</th>
-<th>Antenna</th>
-<th>Branch</th>
-<th>Fence</th>
-<th>Hanger</th>
-<th>Log</th>
-<th>Wire</th>
-<th>Average</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SOLOv2</td>
-<td>ResNet-50</td>
-<td>6.6</td>
-<td>27.5</td>
-<td>0.0</td>
-<td>28.8</td>
-<td>22.2</td>
-<td>0.0</td>
-<td>14.07</td>
-</tr>
-<tr>
-<td>PolarMask</td>
-<td>ResNet-50</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>18.6</td>
-<td>0.0</td>
-<td>3.10</td>
-</tr>
-<tr>
-<td>SpatialEmbeddings</td>
-<td>-</td>
-<td>38.3</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>49.8</td>
-<td>20.9</td>
-<td>0.0</td>
-<td>18.17</td>
-</tr>
-<tr>
-<td>Mask RCNN</td>
-<td>ResNet-50</td>
-<td>16.9</td>
-<td>4.2</td>
-<td>0.0</td>
-<td>22.1</td>
-<td>32.6</td>
-<td>0.0</td>
-<td>12.63</td>
-</tr>
-<tr>
-<td>DETR</td>
-<td>ResNet-50</td>
-<td>2.1</td>
-<td>2.6</td>
-<td>0.0</td>
-<td>32.2</td>
-<td>46.2</td>
-<td>0.0</td>
-<td>13.85</td>
-</tr>
-<tr>
-<td>ASIS(ours)</td>
-<td>ResNet-50</td>
-<td>77.5</td>
-<td>25.1</td>
-<td>37.1</td>
-<td>53.1</td>
-<td>69.3</td>
-<td>64.9</td>
-<td>54.50</td>
-</tr>
-</tbody></table>
-</div>
-
-<h4 id="41-qualitative-results"><a class="anchor" name="41-qualitative-results" href="#41-qualitative-results"><span class="octicon octicon-link"></span></a>4.1 Qualitative results</h4>
-<div align="center">
-
-<p><a href="ishape_experiment.html"><img src="image/ishape_img/result.png" alt=""></a></p>
-</div>
-
-<h2 id="5-leaderboard"><a class="anchor" name="5-leaderboard" href="#5-leaderboard"><span class="octicon octicon-link"></span></a>5. Leaderboard</h2>
-<div style="text-align: justify">
-
-<p><a href=""><strong>iShape-Leaderboard</strong></a></p>
-<p>If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  <a href=""><code>rpctool</code></a> (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click <a href="">here</a> to submit.</p>
-</div>
-
-
-<h2 id="6-attn"><a class="anchor" name="6-attn" href="#6-attn"><span class="octicon octicon-link"></span></a>6. ATTN</h2>
-<div style="text-align: justify">
-
-<p>This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Lei Yang (<a href="mailto:yanglei@megvii.com">yanglei@megvii.com</a>).</p>
-</div>
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-133191784-1"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
-
- gtag('config', 'UA-133191784-1');
-</script>
-</div></body>
+<html>
+   <head>
+      <style type="text/css">.MathJax_Preview {color: #888; display: contents}
+         #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+         #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+         .MathJax_Error {color: #CC0000; font-style: italic}
+      </style>
+      <style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+         .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+      </style>
+   </head>
+   <body>
+      <div id="MathJax_Message" style="display: none;"></div>
+      <link rel="stylesheet" type="text/css" href="./github.css" id="_theme">
+      <div id="_html" class="markdown-body">
+         <meta charset="UTF-8">
+         <title>iShape datasets Project Page</title>
+         <meta name="description" content="Irregular Shape Instance Segmentation">
+         <meta name="keywords" content="irregular Shape, instance segmentation, overlap, connected components">
+         <link rel="shortcut icon" href="./favicon.ico">
+         <div align="center">
+            <h1 id="irregular-shape-instance-segmentation">Irregular Shape Instance Segmentation</h1>
+            <p><strong><a href="https://github.com/DIYer22">Lei Yang<sup>1</sup></a> &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>1</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>3</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>4</sup> Haoqiang Fan<sup>1</sup></strong></p>
+            <p><sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China<br><sup>2</sup>School of Software, Beihang University, Beijing, China<br><sup>3</sup>Beijing University of Chemical Technology, Beijing, China<br><sup>4</sup>Kuaishou Technology, Beijing, China  </p>
+            <!-- <sup>3</sup>School of Computer Science, The University of Adelaide, Adelaide, Australia -->
+            <hr>
+            <h3 id="abstract--paper--dataset--baselines"><a href="#1-abstract">Abstract</a> | <a href="#2-paper">Paper</a> | <a href="#3-our-ishape-dataset">Dataset</a> | <a href="#4-proposed-baseline-method-on-the-ishape-dataset">Baselines</a></h3>
+            <!-- | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool)  -->
+         </div>
+         <h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span class="octicon octicon-link"></span></a>1. Abstract</h2>
+         <p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to promote the study of instance segmentation for objects with irregular shapes. Our key observation is that though irregularly shaped objects widely exist in daily life and industrial scenarios, they received little attention in the instance segmentation field due to the lack of corresponding datasets. To fill this gap, we propose iShape, an irregular shape dataset for instance segmentation. Unlike most existing instance segmentation datasets of regular objects, iShape has many characteristics that challenge existing instance segmentation algorithms, such as large overlaps between bounding boxes of instances, extreme aspect ratios, and large numbers of connected components per instance. We benchmark popular instance segmentation methods on iShape and find their performance drop dramatically. Hence, we propose an affinity-based instance segmentation algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
+         <h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2. Paper</h2>
+         <div align="center">
+            <a href="image/ishape_img/paper.png">
+            <img style="width:200px" src="image/ishape_img/paper.png">
+            </a>   
+            <p><a href="https://github.com/iShape/"><strong>Paper on github =&gt; "Irregular Shape Instance Segmentation"</strong></a></p>
+         </div>
+         <h2 id="3-our-ishape-dataset"><a class="anchor" name="3-our-ishape-dataset" href="#3-our-ishape-dataset"><span class="octicon octicon-link"></span></a>3. Our iShape dataset</h2>
+         <div align="center">
+            <p><img src="image/ishape_img/ishape.png" alt=""></p>
+            <h3 id="download-ishape-dataset--ishape_datasettar-45gb">Download iShape dataset: =&gt; <a href="http://47.103.201.240:9000/ishape/ishape_dataset.tar">ishape_dataset.tar (4.5GB)</a></h3>
+            <h3 id="browse-ishape-dataset-online--ishape_dataset">Browse iShape dataset online: =&gt; <a href="http://47.103.201.240:9000/ishape/ishape_dataset">ishape_dataset</a></h3>
+         </div>
+         <h4 id="31-dataset-license"><a class="anchor" name="31-dataset-license" href="#31-dataset-license"><span class="octicon octicon-link"></span></a>3.1 Dataset license:</h4>
+         <img style="width:200px" src="https://blogs.uakron.edu/dds/files/2014/07/Public-Domain.jpg">
+         <p><a href="https://creativecommons.org/publicdomain/zero/1.0/">Public domain (CC0)</a>    </p>
+         <h4 id="32-overview-infomation-of-the-rpc-dataset"><a class="anchor" name="32-overview-infomation-of-the-rpc-dataset" href="#32-overview-infomation-of-the-rpc-dataset"><span class="octicon octicon-link"></span></a>3.2 Overview infomation of the RPC dataset</h4>
+         <div align="center">
+            <table>
+               <thead>
+                  <tr>
+                     <th><strong># sub-datasets</strong></th>
+                     <th><strong># imgages</strong></th>
+                     <th><strong># instances</strong></th>
+                     <th><strong># instance/image</strong></th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>iShape-Antenna</td>
+                     <td>370</td>
+                     <td>3,036</td>
+                     <td>8.20</td>
+                  </tr>
+                  <tr>
+                     <td>iShape-Branch</td>
+                     <td>2,500</td>
+                     <td>26,046</td>
+                     <td>10.14</td>
+                  </tr>
+                  <tr>
+                     <td>iShape-Fence</td>
+                     <td>2,500</td>
+                     <td>7,870</td>
+                     <td>3.15</td>
+                  </tr>
+                  <tr>
+                     <td>iShape-Hanger</td>
+                     <td>2,500</td>
+                     <td>49,275</td>
+                     <td>19,71</td>
+                  </tr>
+                  <tr>
+                     <td>iShape-Log</td>
+                     <td>2,500</td>
+                     <td>72,144</td>
+                     <td>28.86</td>
+                  </tr>
+                  <tr>
+                     <td>iShape-Wire</td>
+                     <td>2,500</td>
+                     <td>17,469</td>
+                     <td>6.99</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <h2 id="4-proposed-baseline-method-on-the-ishape-dataset"><a class="anchor" name="4-proposed-baseline-method-on-the-ishape-dataset" href="#4-proposed-baseline-method-on-the-ishape-dataset"><span class="octicon octicon-link"></span></a>4. Proposed baseline method on the iShape dataset</h2>
+         <h4 id="41-experimental-results"><a class="anchor" name="41-experimental-results" href="#41-experimental-results"><span class="octicon octicon-link"></span></a>4.1 Experimental results</h4>
+         <div align="center">
+            <table>
+               <thead>
+                  <tr>
+                     <th>Method</th>
+                     <th>Backbone</th>
+                     <th>Antenna</th>
+                     <th>Branch</th>
+                     <th>Fence</th>
+                     <th>Hanger</th>
+                     <th>Log</th>
+                     <th>Wire</th>
+                     <th>Average</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>SOLOv2</td>
+                     <td>ResNet-50</td>
+                     <td>6.6</td>
+                     <td>27.5</td>
+                     <td>0.0</td>
+                     <td>28.8</td>
+                     <td>22.2</td>
+                     <td>0.0</td>
+                     <td>14.07</td>
+                  </tr>
+                  <tr>
+                     <td>PolarMask</td>
+                     <td>ResNet-50</td>
+                     <td>0.0</td>
+                     <td>0.0</td>
+                     <td>0.0</td>
+                     <td>0.0</td>
+                     <td>18.6</td>
+                     <td>0.0</td>
+                     <td>3.10</td>
+                  </tr>
+                  <tr>
+                     <td>SpatialEmbeddings</td>
+                     <td>-</td>
+                     <td>38.3</td>
+                     <td>0.0</td>
+                     <td>0.0</td>
+                     <td>49.8</td>
+                     <td>20.9</td>
+                     <td>0.0</td>
+                     <td>18.17</td>
+                  </tr>
+                  <tr>
+                     <td>Mask RCNN</td>
+                     <td>ResNet-50</td>
+                     <td>16.9</td>
+                     <td>4.2</td>
+                     <td>0.0</td>
+                     <td>22.1</td>
+                     <td>32.6</td>
+                     <td>0.0</td>
+                     <td>12.63</td>
+                  </tr>
+                  <tr>
+                     <td>DETR</td>
+                     <td>ResNet-50</td>
+                     <td>2.1</td>
+                     <td>2.6</td>
+                     <td>0.0</td>
+                     <td>32.2</td>
+                     <td>46.2</td>
+                     <td>0.0</td>
+                     <td>13.85</td>
+                  </tr>
+                  <tr>
+                     <td>ASIS(ours)</td>
+                     <td>ResNet-50</td>
+                     <td>77.5</td>
+                     <td>25.1</td>
+                     <td>37.1</td>
+                     <td>53.1</td>
+                     <td>69.3</td>
+                     <td>64.9</td>
+                     <td>54.50</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <h4 id="41-qualitative-results"><a class="anchor" name="41-qualitative-results" href="#41-qualitative-results"><span class="octicon octicon-link"></span></a>4.1 Qualitative results</h4>
+         <p>More qualitative results are <a href="ishape_experiment.html">=&gt; here</a></p>
+         <div align="center">
+            <p><a href="ishape_experiment.html"><img src="image/ishape_img/result.png" alt=""></a></p>
+         </div>
+         <!-- 
+            ## 5. Leaderboard
+            
+            
+            <div style="text-align: justify">
+            
+            <p><a href=""><strong>iShape-Leaderboard</strong></a></p>
+            <p>If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  <a href=""><code>rpctool</code></a> (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click <a href="">here</a> to submit.</p>
+            </div> -->
+         <!-- ## 6. ATTN
+            <div style="text-align: justify">
+            
+            This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Lei Yang (yanglei@megvii.com).
+            
+            </div> -->
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+         <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-133191784-1"></script>
+         <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-133191784-1');
+         </script>
+      </div>
+      <script type="text/x-mathjax-config;executed=true">
+         // TeX-AMS_HTML
+         MathJax.Hub.Config({
+           jax: [
+             'input/TeX',
+             'output/HTML-CSS',
+             'output/PreviewHTML',
+           ],
+           extensions: [
+             'tex2jax.js',
+             'AssistiveMML.js',
+             'a11y/accessibility-menu.js',
+           ],
+           TeX: {
+             extensions: [
+               'AMSmath.js',
+               'AMSsymbols.js',
+               'noErrors.js',
+               'noUndefined.js',
+             ]
+           },
+           tex2jax: {
+             inlineMath: [
+               ['$', '$'],
+               ['\\(', '\\)'],
+             ],
+             displayMath: [
+               ['$$', '$$'],
+               ['\\[', '\\]'],
+             ],
+             processEscapes: true
+           },
+           showMathMenu: false,
+           showProcessingMessages: false,
+           messageStyle: 'none',
+           skipStartupTypeset: true, // disable initial rendering
+           positionToHash: false
+         })
+         // set specific container to render, can be delayed too
+         MathJax.Hub.Queue(
+           ['Typeset', MathJax.Hub, '_html']
+         )
+      </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js"></script>
+   </body>
+   <div style="all: initial;">
+      <div id="__hcfy__" style="all: initial;"></div>
+   </div>
+</html>

@@ -21,7 +21,10 @@
 
 ---
 
- ### [Abstract](#1-abstract) | [Paper](#2-paper) | [Dataset](#3-our-iShape-dataset) | [Baselines](#4-proposed-baseline-method-on-the-iShape-dataset) | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool) 
+ ### [Abstract](#1-abstract) | [Paper](#2-paper) | [Dataset](#3-our-ishape-dataset) | [Baselines](#4-proposed-baseline-method-on-the-ishape-dataset)
+ 
+  <!-- | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool)  -->
+
 </div>
 
 ## 1. Abstract
@@ -52,8 +55,10 @@
 </div>
 
 #### 3.1 Dataset license:  
-[![](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)    
-CC BY-NC-SA 4.0
+
+<img style="width:200px" src="https://blogs.uakron.edu/dds/files/2014/07/Public-Domain.jpg">
+
+[Public domain (CC0)](https://creativecommons.org/publicdomain/zero/1.0/)    
 
 #### 3.2 Overview infomation of the RPC dataset 
 
@@ -89,12 +94,14 @@ CC BY-NC-SA 4.0
 
 #### 4.1 Qualitative results 
 
+More qualitative results are [=> here](ishape_experiment.html)
+
 <div align="center">
 
 [![](image/ishape_img/result.png)](ishape_experiment.html)
 
 </div>
-
+<!-- 
 ## 5. Leaderboard
 
 
@@ -104,16 +111,16 @@ CC BY-NC-SA 4.0
 
 If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  [`rpctool`]() (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click [here]() to submit.
 
-</div>
+</div> -->
 
 
-## 6. ATTN
+<!-- ## 6. ATTN
 
 <div style="text-align: justify">
 
 This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Lei Yang (yanglei@megvii.com).
 
-</div>
+</div> -->
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
