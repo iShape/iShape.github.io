@@ -70,7 +70,9 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 
 </div>
 
-### Download iShape dataset: => [ishape_dataset.tar (4.5GB)](http://47.103.201.240:9000/ishape/ishape_dataset.tar)   
+### Download iShape dataset (4.5GB):
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://47.103.201.240:9000/ishape/ishape_dataset.tar</p>
+
 ### Browse iShape dataset online: => [ishape_dataset](http://47.103.201.240:9000/ishape/ishape_dataset)
 
 **Dataset format:** iShape provides both Cityscapes and COCO style instance segmentation annotations.

@@ -1,310 +1,315 @@
 <html><head><style type="text/css">.MathJax_Preview {color: #888; display: contents}
-   #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
-   #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
-   .MathJax_Error {color: #CC0000; font-style: italic}
-   </style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
-   .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
-   </style></head><body><div id="MathJax_Message" style="display: none;"></div><link rel="stylesheet" type="text/css" href="github.css" id="_theme"><div id="_html" class="markdown-body">
-       <meta charset="UTF-8">
-       <title>iShape datasets Project Page</title>
-       <meta name="description" content="Irregular Shape Instance Segmentation">
-       <meta name="keywords" content="irregular Shape, instance segmentation, overlap, connected components">
-       <link rel="shortcut icon" href="./favicon.ico">
-   
-   
-   <div align="center">
-   
-   <h1 id="irregular-shape-instance-segmentation">Irregular Shape Instance Segmentation</h1>
-   <p><strong><a href="https://github.com/DIYer22">Lei Yang<sup>1</sup></a> &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>3</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>5</sup> Haoqiang Fan<sup>1</sup></strong></p>
-   <p><sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China<br><sup>2</sup>School of Software, Beihang University, Beijing, China<br><sup>3</sup>Hong Kong University of Science and Technology, Hong Kong, China<br><sup>4</sup>Beijing University of Chemical Technology, Beijing, China<br><sup>5</sup>Kuaishou Technology, Beijing, China  </p>
-   <!-- <sup>3</sup>School of Computer Science, The University of Adelaide, Adelaide, Australia -->
-   
-   
-   <div align="center">
-   
-   <br>
-   
-     <img style="width:200px" src="image/ishape_img/wire5.png">
-     <img style="width:200px" src="image/ishape_img/wire-inst.png">
-   
-   
-   <p style="width:670px; text-align: justify">A typical scene of objects with irregular shape and similar appearance. It has many characteristics that challenge instance segmentation algorithms, including the large overlaps between bounding boxes of objects, extreme aspect ratios (bounding box of the grey mask), and large numbers of connected components in one instance (green and blue masks).</p>
-   
-   <br>
-   
-   </div>
-   
-   
-   <hr>
-   <h3 id="abstract--paper--dataset--baselines--benchmark--misc"><a href="#1-abstract">Abstract</a> | <a href="#2-paper">Paper</a> | <a href="#3-our-ishape-dataset">Dataset</a> | <a href="#4-our-baseline-arbitrary-shape-instance-segmentation">Baselines</a> | <a href="#5-benchmark">Benchmark</a> | <a href="#6-misc">Misc</a></h3>
-     <!-- | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool)  -->
-   
-   </div>
-   
-   <h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span class="octicon octicon-link"></span></a>1. Abstract</h2>
-   <p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to promote the study of instance segmentation for objects with irregular shapes. Our key observation is that though irregularly shaped objects widely exist in daily life and industrial scenarios, they received little attention in the instance segmentation field due to the lack of corresponding datasets. To fill this gap, we propose iShape, an irregular shape dataset for instance segmentation. Unlike most existing instance segmentation datasets of regular objects, iShape has many characteristics that challenge existing instance segmentation algorithms, such as large overlaps between bounding boxes of instances, extreme aspect ratios, and large numbers of connected components per instance. We benchmark popular instance segmentation methods on iShape and find their performance drop dramatically. Hence, we propose an affinity-based instance segmentation algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
-   
-   <h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2. Paper</h2>
-   <div align="center">
-   
-   <a href="https://openreview.net/forum?id=48CBzhshpcS">
-       <img style="width:200px" src="image/ishape_img/paper.png">
-   </a>   
-   
-   
-   <p><a href="https://openreview.net/forum?id=48CBzhshpcS"><strong>Paper on OpenReview.net =&gt; "Irregular Shape Instance Segmentation"</strong></a></p>
-   </div>
-   
-   <h2 id="3-our-ishape-dataset"><a class="anchor" name="3-our-ishape-dataset" href="#3-our-ishape-dataset"><span class="octicon octicon-link"></span></a>3. Our iShape dataset</h2>
-   <p>In this work, we present iShape, a new dataset designed for <strong>i</strong>rregular <strong>Shape</strong> instance segmentation. Our dataset consists of six sub-datasets, namely iShape-Antenna, iShape-Branch, iShape-Fence, iShape-Log, iShape-Hanger, and iShape-Wire. As shown in  picture below, each sub-dataset represents scenes of a typical irregular shape, for example, strip shape,  hollow shape, and mesh shape.</p>
-   <div align="center">
-   
-   <p><img src="image/ishape_img/ishape.png" alt=""></p>
-   </div>
-   
-   <h3 id="download-ishape-dataset--ishape_datasettar-45gb"><a class="anchor" name="download-ishape-dataset--ishape_datasettar-45gb" href="#download-ishape-dataset--ishape_datasettar-45gb"><span class="octicon octicon-link"></span></a>Download iShape dataset: =&gt; <a href="http://47.103.201.240:9000/ishape/ishape_dataset.tar">ishape_dataset.tar (4.5GB)</a></h3>
-   <h3 id="browse-ishape-dataset-online--ishape_dataset"><a class="anchor" name="browse-ishape-dataset-online--ishape_dataset" href="#browse-ishape-dataset-online--ishape_dataset"><span class="octicon octicon-link"></span></a>Browse iShape dataset online: =&gt; <a href="http://47.103.201.240:9000/ishape/ishape_dataset">ishape_dataset</a></h3>
-   <p><strong>Dataset format:</strong> iShape provides both Cityscapes and COCO style instance segmentation annotations.</p>
-   <ul>
-   <li>Cityscapes style: store as <code>*.png</code> files under directory <code>instance_map</code>. Similar to <code>*_instanceIds.png</code> in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel value <code>x</code> means that the pixel belongs to the instance ID is <code>x</code>.</li>
-   <li>COCO style: It should be pointed out that the COCO style annotations encode masks by <a href="https://en.wikipedia.org/wiki/Run-length_encoding">Run-Length Encoding(RLE)</a>, because polygon can not represent hollow-shaped masks.</li>
-   </ul>
-   <p><strong>Dataset license:</strong> <a href="https://creativecommons.org/publicdomain/zero/1.0/">Public domain (CC0)</a>    </p>
-   <img style="width:200px" src="https://blogs.uakron.edu/dds/files/2014/07/Public-Domain.jpg">
-   
-   <p><strong>Overview infomation of the iShape dataset:</strong> </p>
-   <div align="center">
-   
-   <table>
-   <thead>
-   <tr>
-   <th><strong># sub-datasets</strong></th>
-   <th align="right"><strong># imgages</strong></th>
-   <th align="right"><strong># instances</strong></th>
-   <th align="right"><strong># instance/image</strong></th>
-   </tr>
-   </thead>
-   <tbody><tr>
-   <td>iShape-Antenna</td>
-   <td align="right">370</td>
-   <td align="right">3,036</td>
-   <td align="right">8.20</td>
-   </tr>
-   <tr>
-   <td>iShape-Branch</td>
-   <td align="right">2,500</td>
-   <td align="right">26,046</td>
-   <td align="right">10.14</td>
-   </tr>
-   <tr>
-   <td>iShape-Fence</td>
-   <td align="right">2,500</td>
-   <td align="right">7,870</td>
-   <td align="right">3.15</td>
-   </tr>
-   <tr>
-   <td>iShape-Hanger</td>
-   <td align="right">2,500</td>
-   <td align="right">49,275</td>
-   <td align="right">19,71</td>
-   </tr>
-   <tr>
-   <td>iShape-Log</td>
-   <td align="right">2,500</td>
-   <td align="right">72,144</td>
-   <td align="right">28.86</td>
-   </tr>
-   <tr>
-   <td>iShape-Wire</td>
-   <td align="right">2,500</td>
-   <td align="right">17,469</td>
-   <td align="right">6.99</td>
-   </tr>
-   </tbody></table>
-   </div>
-   
-   <h2 id="4-our-baseline-arbitrary-shape-instance-segmentation"><a class="anchor" name="4-our-baseline-arbitrary-shape-instance-segmentation" href="#4-our-baseline-arbitrary-shape-instance-segmentation"><span class="octicon octicon-link"></span></a>4. Our Baseline: Arbitrary Shape Instance Segmentation</h2>
-   <p style="text-align: justify"> We introduce a stronger baseline considering irregular shape in this paper, which explicitly combines perception and reasoning. Our key insight is to simulate how a person identifies an irregular object. Taking the wire shown in Figure 1 for example, one natural way is to start from a local point and gradually expand by following the wire contour and figure out the entire object. The behavior of such ``following the contour'' procedure is a process of <b>continuous iterative reasoning based on local clues</b>, which is similar to the recent affinity-based approaches . Under such observation, we propose a novel affinity-based instance segmentation baseline, called ASIS, which includes principles of generating effective and efficient affinity kernel based on dataset property to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance  <b>S</b>egmentation. Experimental results show that the proposed baseline outperforms existing state-of-the-art methods by a large margin on iShape.</p>
-   
-   
-   <div align="center">
-   
-   <br>
-   
-     <img style="width:700px" src="image/ishape_img/overview.png">
-   
-   
-   <p style="width:700px; text-align: justify"><b>Overview of ASIS</b>. In the training stage, the network learns to predict the semantic segmenation as well as the affinity map where the ground truth of affinity can be generated by affinity kernel and instance ground truth. In the inference stage, the predicted affinity map will be used to construct a sparse and undirected graph, with pixel as node and affinity map as edge. The final instance label then can be generated by applying a class assign module on top of the constructed graph and semantic segmentation map.</p>
-   
-   <br>
-   
-   </div>
-   
-   <h2 id="5-benchmark"><a class="anchor" name="5-benchmark" href="#5-benchmark"><span class="octicon octicon-link"></span></a>5. Benchmark</h2>
-   <p>We also benchmark existing instance segmentation algorithms on iShape and find their performance degrades significantly.</p>
-   <h4 id="51-experimental-results"><a class="anchor" name="51-experimental-results" href="#51-experimental-results"><span class="octicon octicon-link"></span></a>5.1 Experimental results</h4>
-   <div align="center">
-   
-   <table>
-   <thead>
-   <tr>
-   <th>Method</th>
-   <th align="right">Backbone</th>
-   <th align="right">Antenna</th>
-   <th align="right">Branch</th>
-   <th align="right">Fence</th>
-   <th align="right">Hanger</th>
-   <th align="right">Log</th>
-   <th align="right">Wire</th>
-   <th align="right">Average</th>
-   </tr>
-   </thead>
-   <tbody><tr>
-   <td>SOLOv2</td>
-   <td align="right">ResNet-50</td>
-   <td align="right">6.6</td>
-   <td align="right">27.5</td>
-   <td align="right">0.0</td>
-   <td align="right">28.8</td>
-   <td align="right">22.2</td>
-   <td align="right">0.0</td>
-   <td align="right">14.07</td>
-   </tr>
-   <tr>
-   <td>PolarMask</td>
-   <td align="right">ResNet-50</td>
-   <td align="right">0.0</td>
-   <td align="right">0.0</td>
-   <td align="right">0.0</td>
-   <td align="right">0.0</td>
-   <td align="right">18.6</td>
-   <td align="right">0.0</td>
-   <td align="right">3.10</td>
-   </tr>
-   <tr>
-   <td>SpatialEmbeddings</td>
-   <td align="right">-</td>
-   <td align="right">38.3</td>
-   <td align="right">0.0</td>
-   <td align="right">0.0</td>
-   <td align="right">49.8</td>
-   <td align="right">20.9</td>
-   <td align="right">0.0</td>
-   <td align="right">18.17</td>
-   </tr>
-   <tr>
-   <td>Mask RCNN</td>
-   <td align="right">ResNet-50</td>
-   <td align="right">16.9</td>
-   <td align="right">4.2</td>
-   <td align="right">0.0</td>
-   <td align="right">22.1</td>
-   <td align="right">32.6</td>
-   <td align="right">0.0</td>
-   <td align="right">12.63</td>
-   </tr>
-   <tr>
-   <td>DETR</td>
-   <td align="right">ResNet-50</td>
-   <td align="right">2.1</td>
-   <td align="right">2.6</td>
-   <td align="right">0.0</td>
-   <td align="right">32.2</td>
-   <td align="right">46.2</td>
-   <td align="right">0.0</td>
-   <td align="right">13.85</td>
-   </tr>
-   <tr>
-   <td>ASIS(ours)</td>
-   <td align="right">ResNet-50</td>
-   <td align="right">77.5</td>
-   <td align="right">25.1</td>
-   <td align="right">37.1</td>
-   <td align="right">53.1</td>
-   <td align="right">69.3</td>
-   <td align="right">64.9</td>
-   <td align="right">54.50</td>
-   </tr>
-   </tbody></table>
-   </div>
-   
-   <h4 id="52-qualitative-results"><a class="anchor" name="52-qualitative-results" href="#52-qualitative-results"><span class="octicon octicon-link"></span></a>5.2 Qualitative results</h4>
-   <p>Qualitative results are <a href="ishape_experiment.html">=&gt; <strong>here</strong></a></p>
-   <div align="center" style="width:300px">
-   
-   <p><a href="ishape_experiment.html"><img src="image/ishape_img/result.png" alt=""></a></p>
-   </div>
-   <!-- 
-   ## 5. Leaderboard
-   
-   
-   <div style="text-align: justify">
-   
-   <p><a href=""><strong>iShape-Leaderboard</strong></a></p>
-   <p>If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  <a href=""><code>rpctool</code></a> (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click <a href="">here</a> to submit.</p>
-   </div> -->
-   
-   
-   <h2 id="6-misc"><a class="anchor" name="6-misc" href="#6-misc"><span class="octicon octicon-link"></span></a>6. Misc</h2>
-   <p>If you have any questions about iShape, feel free to submit an issue here: <a href="https://github.com/iShape/iShape.github.io/issues">issues</a>.</p>
-   <!-- ## 6. ATTN
-   
-   <div style="text-align: justify">
-   
-   This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Lei Yang (yanglei@megvii.com).
-   
-   </div> -->
-   
-   
-   <!-- Global site tag (gtag.js) - Google Analytics -->
-   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGRJZ0J17J"></script>
-   <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-   
-     gtag('config', 'G-NGRJZ0J17J');
-   </script>
-   </div><script type="text/x-mathjax-config;executed=true">
-     // TeX-AMS_HTML
-     MathJax.Hub.Config({
-       jax: [
-         'input/TeX',
-         'output/HTML-CSS',
-         'output/PreviewHTML',
-       ],
-       extensions: [
-         'tex2jax.js',
-         'AssistiveMML.js',
-         'a11y/accessibility-menu.js',
-       ],
-       TeX: {
-         extensions: [
-           'AMSmath.js',
-           'AMSsymbols.js',
-           'noErrors.js',
-           'noUndefined.js',
-         ]
-       },
-       tex2jax: {
-         inlineMath: [
-           ['$', '$'],
-           ['\\(', '\\)'],
-         ],
-         displayMath: [
-           ['$$', '$$'],
-           ['\\[', '\\]'],
-         ],
-         processEscapes: true
-       },
-       showMathMenu: false,
-       showProcessingMessages: false,
-       messageStyle: 'none',
-       skipStartupTypeset: true, // disable initial rendering
-       positionToHash: false
-     })
-     // set specific container to render, can be delayed too
-     MathJax.Hub.Queue(
-       ['Typeset', MathJax.Hub, '_html']
-     )
-   </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js"></script></body><div style="all: initial;"><div id="__hcfy__" style="all: initial;"></div></div></html>
+  #MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+  #MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+  .MathJax_Error {color: #CC0000; font-style: italic}
+  </style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+  .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+  </style></head><body><div id="MathJax_Message" style="display: none;"></div><link rel="stylesheet" type="text/css" href="github.css" id="_theme"><div id="_html" class="markdown-body">
+      <meta charset="UTF-8">
+      <title>iShape datasets Project Page</title>
+      <meta name="description" content="Irregular Shape Instance Segmentation">
+      <meta name="keywords" content="irregular Shape, instance segmentation, overlap, connected components">
+      <link rel="shortcut icon" href="./favicon.ico">
+  
+  
+  <div align="center">
+  
+  <h1 id="irregular-shape-instance-segmentation">Irregular Shape Instance Segmentation</h1>
+  <p><strong><a href="https://github.com/DIYer22">Lei Yang<sup>1</sup></a> &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>3</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>5</sup> Haoqiang Fan<sup>1</sup></strong></p>
+  <p><sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China<br><sup>2</sup>School of Software, Beihang University, Beijing, China<br><sup>3</sup>Hong Kong University of Science and Technology, Hong Kong, China<br><sup>4</sup>Beijing University of Chemical Technology, Beijing, China<br><sup>5</sup>Kuaishou Technology, Beijing, China  </p>
+  <!-- <sup>3</sup>School of Computer Science, The University of Adelaide, Adelaide, Australia -->
+  
+  
+  <div align="center">
+  
+  <br>
+  
+    <img style="width:200px" src="image/ishape_img/wire5.png">
+    <img style="width:200px" src="image/ishape_img/wire-inst.png">
+  
+  
+  <p style="width:670px; text-align: justify">A typical scene of objects with irregular shape and similar appearance. It has many characteristics that challenge instance segmentation algorithms, including the large overlaps between bounding boxes of objects, extreme aspect ratios (bounding box of the grey mask), and large numbers of connected components in one instance (green and blue masks).</p>
+  
+  <br>
+  
+  </div>
+  
+  
+  <hr>
+  <h3 id="abstract--paper--dataset--baselines--benchmark--misc"><a href="#1-abstract">Abstract</a> | <a href="#2-paper">Paper</a> | <a href="#3-our-ishape-dataset">Dataset</a> | <a href="#4-our-baseline-arbitrary-shape-instance-segmentation">Baselines</a> | <a href="#5-benchmark">Benchmark</a> | <a href="#6-misc">Misc</a></h3>
+    <!-- | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool)  -->
+  
+  </div>
+  
+  <h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span class="octicon octicon-link"></span></a>1. Abstract</h2>
+  <p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to promote the study of instance segmentation for objects with irregular shapes. Our key observation is that though irregularly shaped objects widely exist in daily life and industrial scenarios, they received little attention in the instance segmentation field due to the lack of corresponding datasets. To fill this gap, we propose iShape, an irregular shape dataset for instance segmentation. Unlike most existing instance segmentation datasets of regular objects, iShape has many characteristics that challenge existing instance segmentation algorithms, such as large overlaps between bounding boxes of instances, extreme aspect ratios, and large numbers of connected components per instance. We benchmark popular instance segmentation methods on iShape and find their performance drop dramatically. Hence, we propose an affinity-based instance segmentation algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
+  
+  <h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2. Paper</h2>
+  <div align="center">
+  
+  <a href="https://openreview.net/forum?id=48CBzhshpcS">
+      <img style="width:200px" src="image/ishape_img/paper.png">
+  </a>   
+  
+  
+  <p><a href="https://openreview.net/forum?id=48CBzhshpcS"><strong>Paper on OpenReview.net =&gt; "Irregular Shape Instance Segmentation"</strong></a></p>
+  </div>
+  
+  <h2 id="3-our-ishape-dataset"><a class="anchor" name="3-our-ishape-dataset" href="#3-our-ishape-dataset"><span class="octicon octicon-link"></span></a>3. Our iShape dataset</h2>
+  <p>In this work, we present iShape, a new dataset designed for <strong>i</strong>rregular <strong>Shape</strong> instance segmentation. Our dataset consists of six sub-datasets, namely iShape-Antenna, iShape-Branch, iShape-Fence, iShape-Log, iShape-Hanger, and iShape-Wire. As shown in  picture below, each sub-dataset represents scenes of a typical irregular shape, for example, strip shape,  hollow shape, and mesh shape.</p>
+  <div align="center">
+  
+  <p><img src="image/ishape_img/ishape.png" alt=""></p>
+  </div>
+  
+  <h3 id="download-ishape-dataset-45gb"><a class="anchor" name="download-ishape-dataset-45gb" href="#download-ishape-dataset-45gb"><span class="octicon octicon-link"></span></a>Download iShape dataset (4.5GB):</h3>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://47.103.201.240:9000/ishape/ishape_dataset.tar</p>
+  
+  <h3 id="browse-ishape-dataset-online--ishape_dataset"><a class="anchor" name="browse-ishape-dataset-online--ishape_dataset" href="#browse-ishape-dataset-online--ishape_dataset"><span class="octicon octicon-link"></span></a>Browse iShape dataset online: =&gt; <a href="http://47.103.201.240:9000/ishape/ishape_dataset">ishape_dataset</a></h3>
+  <p><strong>Dataset format:</strong> iShape provides both Cityscapes and COCO style instance segmentation annotations.</p>
+  <ul>
+  <li>Cityscapes style: store as <code>*.png</code> files under directory <code>instance_map</code>. Similar to <code>*_instanceIds.png</code> in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel value <code>x</code> means that the pixel belongs to the instance ID is <code>x</code>.</li>
+  <li>COCO style: It should be pointed out that the COCO style annotations encode masks by <a href="https://en.wikipedia.org/wiki/Run-length_encoding">Run-Length Encoding(RLE)</a>, because polygon can not represent hollow-shaped masks.</li>
+  </ul>
+  <p><strong>Dataset license:</strong> <a href="https://creativecommons.org/publicdomain/zero/1.0/">Public domain (CC0)</a>    </p>
+  <img style="width:200px" src="https://blogs.uakron.edu/dds/files/2014/07/Public-Domain.jpg">
+  
+  <p><strong>Overview infomation of the iShape dataset:</strong> </p>
+  <div align="center">
+  
+  <table>
+  <thead>
+  <tr>
+  <th><strong># sub-datasets</strong></th>
+  <th align="right"><strong># imgages</strong></th>
+  <th align="right"><strong># instances</strong></th>
+  <th align="right"><strong># instance/image</strong></th>
+  </tr>
+  </thead>
+  <tbody><tr>
+  <td>iShape-Antenna</td>
+  <td align="right">370</td>
+  <td align="right">3,036</td>
+  <td align="right">8.20</td>
+  </tr>
+  <tr>
+  <td>iShape-Branch</td>
+  <td align="right">2,500</td>
+  <td align="right">26,046</td>
+  <td align="right">10.14</td>
+  </tr>
+  <tr>
+  <td>iShape-Fence</td>
+  <td align="right">2,500</td>
+  <td align="right">7,870</td>
+  <td align="right">3.15</td>
+  </tr>
+  <tr>
+  <td>iShape-Hanger</td>
+  <td align="right">2,500</td>
+  <td align="right">49,275</td>
+  <td align="right">19,71</td>
+  </tr>
+  <tr>
+  <td>iShape-Log</td>
+  <td align="right">2,500</td>
+  <td align="right">72,144</td>
+  <td align="right">28.86</td>
+  </tr>
+  <tr>
+  <td>iShape-Wire</td>
+  <td align="right">2,500</td>
+  <td align="right">17,469</td>
+  <td align="right">6.99</td>
+  </tr>
+  </tbody></table>
+  </div>
+  
+  <h2 id="4-our-baseline-arbitrary-shape-instance-segmentation"><a class="anchor" name="4-our-baseline-arbitrary-shape-instance-segmentation" href="#4-our-baseline-arbitrary-shape-instance-segmentation"><span class="octicon octicon-link"></span></a>4. Our Baseline: Arbitrary Shape Instance Segmentation</h2>
+  <p style="text-align: justify"> We introduce a stronger baseline considering irregular shape in this paper, which explicitly combines perception and reasoning. Our key insight is to simulate how a person identifies an irregular object. Taking the wire shown in Figure 1 for example, one natural way is to start from a local point and gradually expand by following the wire contour and figure out the entire object. The behavior of such ``following the contour'' procedure is a process of <b>continuous iterative reasoning based on local clues</b>, which is similar to the recent affinity-based approaches . Under such observation, we propose a novel affinity-based instance segmentation baseline, called ASIS, which includes principles of generating effective and efficient affinity kernel based on dataset property to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance  <b>S</b>egmentation. Experimental results show that the proposed baseline outperforms existing state-of-the-art methods by a large margin on iShape.</p>
+  
+  
+  <div align="center">
+  
+  <br>
+  
+    <img style="width:700px" src="image/ishape_img/overview.png">
+  
+  
+  <p style="width:700px; text-align: justify"><b>Overview of ASIS</b>. In the training stage, the network learns to predict the semantic segmenation as well as the affinity map where the ground truth of affinity can be generated by affinity kernel and instance ground truth. In the inference stage, the predicted affinity map will be used to construct a sparse and undirected graph, with pixel as node and affinity map as edge. The final instance label then can be generated by applying a class assign module on top of the constructed graph and semantic segmentation map.</p>
+  
+  <br>
+  
+  </div>
+  
+  <h2 id="5-benchmark"><a class="anchor" name="5-benchmark" href="#5-benchmark"><span class="octicon octicon-link"></span></a>5. Benchmark</h2>
+  <p>We also benchmark existing instance segmentation algorithms on iShape and find their performance degrades significantly.</p>
+  <h4 id="51-experimental-results"><a class="anchor" name="51-experimental-results" href="#51-experimental-results"><span class="octicon octicon-link"></span></a>5.1 Experimental results</h4>
+  <div align="center">
+  
+  <table>
+  <thead>
+  <tr>
+  <th>Method</th>
+  <th align="right">Backbone</th>
+  <th align="right">Antenna</th>
+  <th align="right">Branch</th>
+  <th align="right">Fence</th>
+  <th align="right">Hanger</th>
+  <th align="right">Log</th>
+  <th align="right">Wire</th>
+  <th align="right">Average</th>
+  </tr>
+  </thead>
+  <tbody><tr>
+  <td>SOLOv2</td>
+  <td align="right">ResNet-50</td>
+  <td align="right">6.6</td>
+  <td align="right">27.5</td>
+  <td align="right">0.0</td>
+  <td align="right">28.8</td>
+  <td align="right">22.2</td>
+  <td align="right">0.0</td>
+  <td align="right">14.07</td>
+  </tr>
+  <tr>
+  <td>PolarMask</td>
+  <td align="right">ResNet-50</td>
+  <td align="right">0.0</td>
+  <td align="right">0.0</td>
+  <td align="right">0.0</td>
+  <td align="right">0.0</td>
+  <td align="right">18.6</td>
+  <td align="right">0.0</td>
+  <td align="right">3.10</td>
+  </tr>
+  <tr>
+  <td>SpatialEmbeddings</td>
+  <td align="right">-</td>
+  <td align="right">38.3</td>
+  <td align="right">0.0</td>
+  <td align="right">0.0</td>
+  <td align="right">49.8</td>
+  <td align="right">20.9</td>
+  <td align="right">0.0</td>
+  <td align="right">18.17</td>
+  </tr>
+  <tr>
+  <td>Mask RCNN</td>
+  <td align="right">ResNet-50</td>
+  <td align="right">16.9</td>
+  <td align="right">4.2</td>
+  <td align="right">0.0</td>
+  <td align="right">22.1</td>
+  <td align="right">32.6</td>
+  <td align="right">0.0</td>
+  <td align="right">12.63</td>
+  </tr>
+  <tr>
+  <td>DETR</td>
+  <td align="right">ResNet-50</td>
+  <td align="right">2.1</td>
+  <td align="right">2.6</td>
+  <td align="right">0.0</td>
+  <td align="right">32.2</td>
+  <td align="right">46.2</td>
+  <td align="right">0.0</td>
+  <td align="right">13.85</td>
+  </tr>
+  <tr>
+  <td>ASIS(ours)</td>
+  <td align="right">ResNet-50</td>
+  <td align="right">77.5</td>
+  <td align="right">25.1</td>
+  <td align="right">37.1</td>
+  <td align="right">53.1</td>
+  <td align="right">69.3</td>
+  <td align="right">64.9</td>
+  <td align="right">54.50</td>
+  </tr>
+  </tbody></table>
+  </div>
+  
+  <h4 id="52-qualitative-results"><a class="anchor" name="52-qualitative-results" href="#52-qualitative-results"><span class="octicon octicon-link"></span></a>5.2 Qualitative results</h4>
+  <p>Qualitative results are <a href="ishape_experiment.html">=&gt; <strong>here</strong></a></p>
+  <div align="center" style="width:300px">
+  
+  <p><a href="ishape_experiment.html"><img src="image/ishape_img/result.png" alt=""></a></p>
+  </div>
+  
+  <!-- 
+  ## 5. Leaderboard
+  
+  
+  <div style="text-align: justify">
+  
+  [**iShape-Leaderboard**]()
+  
+  If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  [`rpctool`]() (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click [here]() to submit.
+  
+  </div> -->
+  
+  
+  <h2 id="6-misc"><a class="anchor" name="6-misc" href="#6-misc"><span class="octicon octicon-link"></span></a>6. Misc</h2>
+  <p>If you have any questions about iShape, feel free to submit an issue here: <a href="https://github.com/iShape/iShape.github.io/issues">issues</a>.</p>
+  <!-- ## 6. ATTN
+  
+  <div style="text-align: justify">
+  
+  This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Lei Yang (yanglei@megvii.com).
+  
+  </div> -->
+  
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGRJZ0J17J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-NGRJZ0J17J');
+  </script>
+  </div><script type="text/x-mathjax-config;executed=true">
+    // TeX-AMS_HTML
+    MathJax.Hub.Config({
+      jax: [
+        'input/TeX',
+        'output/HTML-CSS',
+        'output/PreviewHTML',
+      ],
+      extensions: [
+        'tex2jax.js',
+        'AssistiveMML.js',
+        'a11y/accessibility-menu.js',
+      ],
+      TeX: {
+        extensions: [
+          'AMSmath.js',
+          'AMSsymbols.js',
+          'noErrors.js',
+          'noUndefined.js',
+        ]
+      },
+      tex2jax: {
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)'],
+        ],
+        displayMath: [
+          ['$$', '$$'],
+          ['\\[', '\\]'],
+        ],
+        processEscapes: true
+      },
+      showMathMenu: false,
+      showProcessingMessages: false,
+      messageStyle: 'none',
+      skipStartupTypeset: true, // disable initial rendering
+      positionToHash: false
+    })
+    // set specific container to render, can be delayed too
+    MathJax.Hub.Queue(
+      ['Typeset', MathJax.Hub, '_html']
+    )
+  </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js"></script></body><div style="all: initial;"><div id="__hcfy__" style="all: initial;"></div></div></html>
