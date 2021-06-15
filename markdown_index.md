@@ -116,6 +116,8 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 
 </div>
 
+**Baseline code will release soon.**
+
 ## 5. Benchmark
 We also benchmark existing instance segmentation algorithms on iShape and find their performance degrades significantly.
 
