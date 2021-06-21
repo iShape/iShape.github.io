@@ -78,12 +78,8 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 **Dataset format:** iShape provides both Cityscapes and COCO style instance segmentation annotations.
 - Cityscapes style: store as `*.png` files under directory `instance_map`. Similar to `*_instanceIds.png` in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel value `x` means that the pixel belongs to the instance ID is `x`.
 - COCO style: It should be pointed out that the COCO style annotations encode masks by [Run-Length Encoding(RLE)](https://en.wikipedia.org/wiki/Run-length_encoding), because polygon can not represent hollow-shaped masks.
-  
-**Dataset license:** [Public domain (CC0)](https://creativecommons.org/publicdomain/zero/1.0/)    
 
-<img style="width:200px" src="https://blogs.uakron.edu/dds/files/2014/07/Public-Domain.jpg">
-
-**Overview infomation of the iShape dataset:** 
+<!-- **Overview infomation of the iShape dataset:** 
 
 <div align="center">
 
@@ -96,7 +92,15 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 | iShape-Log         | 2,500         | 72,144          | 28.86                |
 | iShape-Wire        | 2,500         | 17,469          | 6.99                 |
 
-</div>
+</div> -->
+
+**Source code about the dataset:**
+- [**`build_synthetic_ishape`**](https://github.com/iShape/build_synthetic_ishape): Source code of building iShape synthetic data.
+- [**`bpycv`**](https://github.com/DIYer22/bpycv): Computer vision utils for open-source CG software [Blender](https://www.blender.org/).
+  
+**Dataset license:** [Public domain (CC0)](https://creativecommons.org/publicdomain/zero/1.0/)    
+
+<img style="width:130px" src="https://blogs.uakron.edu/dds/files/2014/07/Public-Domain.jpg">
 
 ## 4. Our Baseline: Arbitrary Shape Instance Segmentation
 
