@@ -11,7 +11,7 @@
 
 # Irregular Shape Instance Segmentation
 
-**[Lei Yang<sup>1</sup>](https://github.com/DIYer22) &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>3</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>5</sup> Haoqiang Fan<sup>1</sup>**
+**[Lei Yang<sup>1</sup>](https://github.com/DIYer22) &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>3</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>5</sup> &nbsp;&nbsp;&nbsp; Haoqiang Fan<sup>1</sup>**
 
 <sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China    
 <sup>2</sup>School of Software, Beihang University, Beijing, China    
@@ -24,9 +24,12 @@
 <div align="center">
 
 <br>
-
+<a href="image/ishape_img/wire5.png">
   <img style="width:200px" src="image/ishape_img/wire5.png">
+</a>
+<a href="image/ishape_img/wire-inst.png">
   <img style="width:200px" src="image/ishape_img/wire-inst.png">
+</a>
 
 
 <p style="width:670px; text-align: justify">A typical scene of objects with irregular shape and similar appearance. It has many characteristics that challenge instance segmentation algorithms, including the large overlaps between bounding boxes of objects, extreme aspect ratios (bounding box of the grey mask), and large numbers of connected components in one instance (green and blue masks).</p>
