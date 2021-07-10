@@ -88,12 +88,12 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 
 | **# sub-datasets** | **# imgages** | **# instances** | **# instance/image** |
 | ------------------ | ------------: | --------------: | -------------------: |
-| iShape-Antenna     | 370           | 3,036           | 8.20                 |
-| iShape-Branch      | 2,500         | 26,046          | 10.14                |
-| iShape-Fence       | 2,500         | 7,870           | 3.15                 |
-| iShape-Hanger      | 2,500         | 49,275          | 19,71                |
-| iShape-Log         | 2,500         | 72,144          | 28.86                |
-| iShape-Wire        | 2,500         | 17,469          | 6.99                 |
+| iShape-Antenna     |           370 |           3,036 |                 8.20 |
+| iShape-Branch      |         2,500 |          26,046 |                10.14 |
+| iShape-Fence       |         2,500 |           7,870 |                 3.15 |
+| iShape-Hanger      |         2,500 |          49,275 |                19,71 |
+| iShape-Log         |         2,500 |          72,144 |                28.86 |
+| iShape-Wire        |         2,500 |          17,469 |                 6.99 |
 
 </div> -->
 
@@ -132,14 +132,14 @@ We also benchmark existing instance segmentation algorithms on iShape and find t
 
 <div align="center" >
 
-| Method            | Backbone  | Antenna | Branch | Fence | Hanger | Log  | Wire | Average |
-| ----------------- | --------: | ------: | -----: | ----: | -----: | ---: | ---: | ------: |
-| SOLOv2            | ResNet-50 | 6.6     | 27.5   | 0.0   | 28.8   | 22.2 | 0.0  | 14.07   |
-| PolarMask         | ResNet-50 | 0.0     | 0.0    | 0.0   | 0.0    | 18.6 | 0.0  | 3.10    |
-| SpatialEmbeddings | -         | 38.3    | 0.0    | 0.0   | 49.8   | 20.9 | 0.0  | 18.17   |
-| Mask RCNN         | ResNet-50 | 16.9    | 4.2    | 0.0   | 22.1   | 32.6 | 0.0  | 12.63   |
-| DETR              | ResNet-50 | 2.1     | 2.6    | 0.0   | 32.2   | 46.2 | 0.0  | 13.85   |
-| ASIS(ours)        | ResNet-50 | 77.5    | 25.1   | 37.1  | 53.1   | 69.3 | 64.9 | 54.50   |
+| Method            |  Backbone | Antenna | Branch | Fence | Hanger |  Log | Wire | Average | Config                                                                             | Download                                                                                                                                                             | Code                                                   |
+| ----------------- | --------: | ------: | -----: | ----: | -----: | ---: | ---: | ------: | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| SOLOv2            | ResNet-50 |     6.6 |   27.5 |   0.0 |   28.8 | 22.2 |  0.0 |   14.07 | config                                                                             | model \| [log](https://drive.google.com/drive/folders/1IIRrz-w7H6cLLkiHGqqFqbaj50v0ZcKD?usp=sharing)                                                                                                                                                         | [Link](https://github.com/WXinlong/SOLO)               |
+| PolarMask         | ResNet-50 |     0.0 |    0.0 |   0.0 |    0.0 | 18.6 |  0.0 |    3.10 | [config](https://drive.google.com/drive/folders/1QbsVJe4jL-6j5Dvth-7a2mpgGYkEPk2a?usp=sharing) | model \| [log](https://drive.google.com/drive/folders/1QbsVJe4jL-6j5Dvth-7a2mpgGYkEPk2a?usp=sharing)                                                                             | [Link](https://github.com/xieenze/PolarMask)           |
+| SpatialEmbeddings |         - |    38.3 |    0.0 |   0.0 |   49.8 | 20.9 |  0.0 |   18.17 | config                                                                             | [model](https://drive.google.com/drive/folders/1WzmoqaKBPcvrQOy2yX_4T103I2knx7Fj?usp=sharing) \| [log](https://drive.google.com/drive/folders/1WzmoqaKBPcvrQOy2yX_4T103I2knx7Fj?usp=sharing) | [Link](https://github.com/davyneven/SpatialEmbeddings) |
+| Mask RCNN         | ResNet-50 |    16.9 |    4.2 |   0.0 |   22.1 | 32.6 |  0.0 |   12.63 | config                                                                             | model \| [log](https://drive.google.com/drive/folders/1CCS3xYmFvLG9FUUV-bQpbGwU4oyJowCa?usp=sharing)                                                                                                                                                         | [Link](https://github.com/facebookresearch/detectron2) |
+| DETR              | ResNet-50 |     2.1 |    2.6 |   0.0 |   32.2 | 46.2 |  0.0 |   13.85 | [config](https://drive.google.com/drive/folders/1gYvJjMn8d5LZoc2BUMj8wGxeB57wYhwK?usp=sharing) | model \| [log](https://drive.google.com/drive/folders/1gYvJjMn8d5LZoc2BUMj8wGxeB57wYhwK?usp=sharing)                                                                             | [Link](https://github.com/facebookresearch/detr)       |
+| ASIS(ours)        | ResNet-50 |    77.5 |   25.1 |  37.1 |   53.1 | 69.3 | 64.9 |   54.50 | config                                                                             | model \| log                                                                                                                                                         | Link                                                   |
 
 </div>
 
