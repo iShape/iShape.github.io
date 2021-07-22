@@ -145,7 +145,150 @@ We also benchmark existing instance segmentation algorithms on iShape and find t
 
 #### 5.2 Qualitative results 
 
-Qualitative results are [=> **here**](ishape_experiment.html)
+<table style="overflow: hidden;">
+  <tbody>
+    <tr style="padding:0px;">
+      <th>Ground Truth</th>
+      <th>Mask RCNN</th>
+      <th>SOLOv2</th>
+      <th>Ours</th>
+    </tr>
+    <tr class="content">
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/gt/antenna/4165.jpg">
+          <img src="image/vis_tmp/gt/antenna/4165.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/maskrcnn/antenna/4165.jpg">
+          <img src="image/vis_tmp/maskrcnn/antenna/4165.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/solov2/antenna/4165.jpg">
+          <img src="image/vis_tmp/solov2/antenna/4165.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/asis/antenna/4165.jpg">
+          <img src="image/vis_tmp/asis/antenna/4165.jpg" style="">
+        </a>
+      </td>
+    </tr>
+    <tr class="content">
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/gt/branch/30.jpg">
+          <img src="image/vis_tmp/gt/branch/30.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/maskrcnn/branch/30.jpg">
+          <img src="image/vis_tmp/maskrcnn/branch/30.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/solov2/branch/30.jpg">
+          <img src="image/vis_tmp/solov2/branch/30.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/asis/branch/30.jpg">
+          <img src="image/vis_tmp/asis/branch/30.jpg" style="">
+        </a>
+      </td>
+    </tr>
+    <tr class="content">
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/gt/fence/103.jpg">
+          <img src="image/vis_tmp/gt/fence/103.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/maskrcnn/fence/103.jpg">
+          <img src="image/vis_tmp/maskrcnn/fence/103.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/solov2/fence/103.jpg">
+          <img src="image/vis_tmp/solov2/fence/103.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/asis/fence/103.jpg">
+          <img src="image/vis_tmp/asis/fence/103.jpg" style="">
+        </a>
+      </td>
+    </tr>
+    <tr class="content">
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/gt/hanger/366.jpg">
+          <img src="image/vis_tmp/gt/hanger/366.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/maskrcnn/hanger/366.jpg">
+          <img src="image/vis_tmp/maskrcnn/hanger/366.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/solov2/hanger/366.jpg">
+          <img src="image/vis_tmp/solov2/hanger/366.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/asis/hanger/366.jpg">
+          <img src="image/vis_tmp/asis/hanger/366.jpg" style="">
+        </a>
+      </td>
+    </tr>
+    <tr class="content">
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/gt/log/103.jpg">
+          <img src="image/vis_tmp/gt/log/103.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/maskrcnn/log/103.jpg">
+          <img src="image/vis_tmp/maskrcnn/log/103.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/solov2/log/103.jpg">
+          <img src="image/vis_tmp/solov2/log/103.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/asis/log/103.jpg">
+          <img src="image/vis_tmp/asis/log/103.jpg" style="">
+        </a>
+      </td>
+    </tr>
+    <tr class="content">
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/gt/wire/212.jpg">
+          <img src="image/vis_tmp/gt/wire/212.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/maskrcnn/wire/212.jpg">
+          <img src="image/vis_tmp/maskrcnn/wire/212.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/solov2/wire/212.jpg">
+          <img src="image/vis_tmp/solov2/wire/212.jpg" style="">
+        </a>
+      </td>
+      <td style="padding:0px;">
+        <a href="image/vis_tmp/asis/wire/212.jpg">
+          <img src="image/vis_tmp/asis/wire/212.jpg" style="">
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+More qualitative results are [=> **here**](ishape_experiment.html)
 
 <div align="center" style="width:300px">
 
