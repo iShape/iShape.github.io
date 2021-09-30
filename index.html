@@ -15,7 +15,7 @@
   <div align="center">
   
   <h1 id="ishape-irregular-shape-instance-segmentation">iShape: Irregular Shape Instance Segmentation</h1>
-  <p><strong><a href="https://github.com/DIYer22">Lei Yang<sup>1</sup></a> &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Yisheng He<sup>3</sup> &nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup> &nbsp;&nbsp;&nbsp; Haibin Huang<sup>5</sup> &nbsp;&nbsp;&nbsp; Haoqiang Fan<sup>1</sup></strong></p>
+  <p><strong><a href="https://github.com/DIYer22">Lei Yang<sup>1</sup></a> &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=UM4qFCsAAAAJ&amp;hl=en">Yisheng He<sup>3</sup></a> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup> &nbsp;&nbsp;&nbsp; <a href="https://brotherhuang.github.io/">Haibin Huang<sup>5</sup></a> &nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=bzzBut4AAAAJ&amp;hl=en">Haoqiang Fan<sup>1</sup></a></strong></p>
   <p><sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China<br><sup>2</sup>School of Software, Beihang University, Beijing, China<br><sup>3</sup>Hong Kong University of Science and Technology, Hong Kong, China<br><sup>4</sup>Beijing University of Chemical Technology, Beijing, China<br><sup>5</sup>Kuaishou Technology, Beijing, China  </p>
   <div align="center">
   
@@ -42,7 +42,7 @@
   </div>
   
   <h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span class="octicon octicon-link"></span></a>1. Abstract</h2>
-  <p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to promote the study of instance segmentation for objects with irregular shapes. Our key observation is that though irregularly shaped objects widely exist in daily life and industrial scenarios, they received little attention in the instance segmentation field due to the lack of corresponding datasets. To fill this gap, we propose iShape, an irregular shape dataset for instance segmentation. Unlike most existing instance segmentation datasets of regular objects, iShape has many characteristics that challenge existing instance segmentation algorithms, such as large overlaps between bounding boxes of instances, extreme aspect ratios, and large numbers of connected components per instance. We benchmark popular instance segmentation methods on iShape and find their performance drop dramatically. Hence, we propose an affinity-based instance segmentation algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
+  <p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to promote the study of instance segmentation for objects with irregular shapes. Our key observation is that though irregularly shaped objects widely exist in daily life and industrial scenarios, they received little attention in the instance segmentation field due to the lack of corresponding datasets. To fill this gap, we propose iShape, an irregular shape dataset for instance segmentation. iShape contains six sub-datasets with one real and five synthetics, each represents a scene of a typical irregular shape. Unlike most existing instance segmentation datasets of regular objects, iShape has many characteristics that challenge existing instance segmentation algorithms, such as large overlaps between bounding boxes of instances, extreme aspect ratios, and large numbers of connected components per instance. We benchmark popular instance segmentation methods on iShape and find their performance drop dramatically. Hence, we propose an affinity-based instance segmentation algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
   
   <h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2. Paper</h2>
   <div align="center">
@@ -63,9 +63,11 @@
   </div>
   
   <h3 id="download-ishape-dataset-45gb"><a class="anchor" name="download-ishape-dataset-45gb" href="#download-ishape-dataset-45gb"><span class="octicon octicon-link"></span></a>Download iShape dataset (4.5GB):</h3>
+  <p><strong>Download on <a href="https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation">=&gt; Kaggle</a></strong></p>
+  <p>Or from our server URL:</p>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://47.103.201.240:9000/ishape/ishape_dataset.tar</p>
   
-  <h3 id="browse-ishape-dataset-online--ishape_dataset"><a class="anchor" name="browse-ishape-dataset-online--ishape_dataset" href="#browse-ishape-dataset-online--ishape_dataset"><span class="octicon octicon-link"></span></a>Browse iShape dataset online: =&gt; <a href="http://47.103.201.240:9000/ishape/ishape_dataset">ishape_dataset</a></h3>
+  <h3 id="browse-ishape-dataset-online-with-visualization--ishape_dataset"><a class="anchor" name="browse-ishape-dataset-online-with-visualization--ishape_dataset" href="#browse-ishape-dataset-online-with-visualization--ishape_dataset"><span class="octicon octicon-link"></span></a>Browse iShape dataset online with visualization: =&gt; <a href="http://47.103.201.240:9000/ishape/ishape_dataset">ishape_dataset</a></h3>
   <p><strong>Dataset format:</strong> iShape provides both Cityscapes and COCO style instance segmentation annotations.</p>
   <ul>
   <li>Cityscapes style: store as <code>*.png</code> files under directory <code>instance_map</code>. Similar to <code>*_instanceIds.png</code> in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel value <code>x</code> means that the pixel belongs to the instance ID is <code>x</code>.</li>
