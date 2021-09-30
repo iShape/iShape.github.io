@@ -75,7 +75,9 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 
 ### Download iShape dataset (4.5GB):
 
-**Download on [=> Kaggle](https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation)**
+<!-- **Download on [=> Kaggle](https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation)** -->
+Download URL:  
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar</b>
 
 Or from our server URL:
 
