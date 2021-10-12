@@ -55,12 +55,14 @@
 
 <div align="center">
 
-<a href="https://openreview.net/forum?id=0B9ORqdydqB">
-    <img style="width:200px" src="image/ishape_img/paper.png">
+<a href="https://arxiv.org/abs/2109.15068">
+    <img style="width:150px;border:1px solid black;box-shadow: 10px 10px 10px rgba(0,0,0,.5);" src="image/ishape_img/paper.png">
 </a>   
 
+<br>
+<br>
 
-[**Paper on OpenReview.net => "Irregular Shape Instance Segmentation"**](https://openreview.net/forum?id=0B9ORqdydqB)
+[**Paper on arXiv => "Irregular Shape Instance Segmentation"**](https://arxiv.org/abs/2109.15068)
 </div>
 
 ## 3. Our iShape dataset 
