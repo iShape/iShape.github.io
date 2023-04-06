@@ -13,6 +13,13 @@
 
 3. Paste raw HTML code [here](https://www.freeformatter.com/html-formatter.html#ad-output) to get formatted HTML code
 
-4. Paste formatted HTML code in `./index.html`, change the `href="chrome-extension://.../github.css"` to `href="./github.css"`
+4. Paste formatted HTML code in `./index.html`, remove all `chrome-extension://...`, e.g. `href="chrome-extension://.../github.css"` to `href="github.css"`
+
+5. `git add *;git commit; git push`
+
+### How to apply update from `.md` to `.html`
+
+1. Press F12 in chrome , and click Elements tab in debug panel. Right click on `<body><h1....` , click `edit As HTML`, copy the raw HTML code 
+
 
 5. `git add *;git commit; git push`

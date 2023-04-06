@@ -62,7 +62,7 @@
 <br>
 <br>
 
-[**Paper on arXiv => "Irregular Shape Instance Segmentation"**](https://arxiv.org/abs/2109.15068)
+[**Paper on arXiv => "Irregular Shape Instance Segmentation"**](https://arxiv.org/abs/2109.15068) | [**Appendix**](https://ylshare.oss-cn-shanghai.aliyuncs.com/iShape-appendix.pdf)
 </div>
 
 ## 3. Our iShape dataset 
@@ -78,14 +78,19 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 ### Download iShape dataset (4.5GB):
 
 <!-- **Download on [=> Kaggle](https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation)** -->
-Download URL:  
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar</b>
 
-Or from our server URL:
+**iShape download URL:**  
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://39.105.21.95:9000/ishape/ishape_dataset.tar</p>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://47.103.201.240:9000/ishape/ishape_dataset.tar</p>
+Or from our oss URL:  
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar</p>
 
-### Browse iShape dataset online with visualization: => [ishape_dataset](http://47.103.201.240:9000/ishape/ishape_dataset)
+```bash
+$ md5sum ishape_dataset.tar
+# 2b3bd15e6ec762bbc03dddc5e4bc24df
+```
+
+### Browse iShape dataset online with visualization: => [ishape_dataset](http://39.105.21.95:9000/ishape/)
 
 **Dataset format:** iShape provides both Cityscapes and COCO style instance segmentation annotations.
 - Cityscapes style: store as `*.png` files under directory `instance_map`. Similar to `*_instanceIds.png` in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel value `x` means that the pixel belongs to the instance ID is `x`.
@@ -112,7 +117,7 @@ Or from our server URL:
   
 **Dataset license:** [Public domain (CC0)](https://creativecommons.org/publicdomain/zero/1.0/)    
 
-<img style="width:130px" src="https://blogs.uakron.edu/dds/files/2014/07/Public-Domain.jpg">
+<img style="width:130px" src="image/misc/Public_Domain_Mark_button.svg.png">
 
 ## 4. Our Baseline: Arbitrary Shape Instance Segmentation
 
