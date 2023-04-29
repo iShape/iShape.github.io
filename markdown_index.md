@@ -11,7 +11,7 @@
 
 # iShape: Irregular Shape Instance Segmentation
 
-**[Lei Yang<sup>1</sup>](https://github.com/DIYer22) &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; [Yisheng He<sup>3</sup>](https://scholar.google.com/citations?user=UM4qFCsAAAAJ&hl=en) &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup> &nbsp;&nbsp;&nbsp; [Haibin Huang<sup>5</sup>](https://brotherhuang.github.io/) &nbsp;&nbsp;&nbsp; [Haoqiang Fan<sup>1</sup>](https://scholar.google.com/citations?user=bzzBut4AAAAJ&hl=en)**
+**[Lei Yang<sup>1</sup>](https://github.com/DIYer22) &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; [Yisheng He<sup>3</sup>](https://scholar.google.com/citations?user=UM4qFCsAAAAJ&hl=en) &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup>&nbsp;&nbsp;&nbsp; Haikun Zhang<sup>4</sup> &nbsp;&nbsp;&nbsp; [Haibin Huang<sup>5</sup>](https://brotherhuang.github.io/) &nbsp;&nbsp;&nbsp; [Haoqiang Fan<sup>1</sup>](https://scholar.google.com/citations?user=bzzBut4AAAAJ&hl=en)**
 
 <sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China    
 <sup>2</sup>School of Software, Beihang University, Beijing, China    
