@@ -7,6 +7,25 @@
     <link rel="shortcut icon" href="./favicon.ico">
 </head>
 
+<details>
+<summary>
+<b>Update:</b> Segment Anything (SAM) references our iShape 🥳 
+</summary>
+<br>
+
+<div align="center">
+<a href="image/ishape_img/sam.png">
+  <img style="width:500px;box-shadow: #00000080 0 0 8px;" src="image/ishape_img/sam.png">
+</a>
+</div>
+<br>
+
+SAM's experiments <a href="https://arxiv.org/abs/2304.02643">[link]</a> demonstrate that iShape dataset possesses the highest quality ground truth (GT) and is also the most challenging segmentation dataset. iShape dataset can serve as a multimodal benchmark for Artificial General Intelligence (AGI).
+
+---
+
+</details>
+
 <div align="center">
 
 # iShape: Irregular Shape Instance Segmentation
@@ -80,17 +99,17 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 <!-- **Download on [=> Kaggle](https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation)** -->
 
 **iShape download URL:**  
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://39.105.21.95:9000/ishape/ishape_dataset.tar</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://113.44.140.251:9000/ishape/ishape_dataset.tar </p>
 
-Or from our oss URL:  
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar</p>
+Or backup URL:  
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar </p>
 
 ```bash
 $ md5sum ishape_dataset.tar
 # 2b3bd15e6ec762bbc03dddc5e4bc24df
 ```
 
-### Browse iShape dataset online with visualization: => [ishape_dataset](http://39.105.21.95:9000/ishape/)
+<!-- ### Browse iShape dataset online with visualization: => [ishape_dataset](http://39.105.21.95:9000/ishape/) -->
 
 **Dataset format:** iShape provides both Cityscapes and COCO style instance segmentation annotations.
 - Cityscapes style: store as `*.png` files under directory `instance_map`. Similar to `*_instanceIds.png` in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel value `x` means that the pixel belongs to the instance ID is `x`.

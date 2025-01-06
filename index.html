@@ -723,19 +723,32 @@
   </style>
 </head>
 
-<body class="_theme-github">
+<body class="_theme-github _color-light">
   <link rel="stylesheet" type="text/css" href="github.css" id="_theme">
   <link rel="stylesheet" type="text/css" href="prism.min.css" id="_prism">
-  <div id="_html" class="markdown-body">
+  <div id="_html" class="markdown-body" style="visibility: visible;">
     <meta charset="UTF-8">
     <title>iShape datasets Project Page</title>
     <meta name="description" content="Irregular Shape Instance Segmentation">
     <meta name="keywords" content="irregular Shape, instance segmentation, overlap, connected components">
     <link rel="shortcut icon" href="./favicon.ico">
-
-
+    <details>
+      <summary>
+        <b>Update:</b> Segment Anything (SAM) references our iShape 🥳
+      </summary>
+      <br>
+      <div align="center">
+        <a href="image/ishape_img/sam.png">
+          <img style="width:500px;box-shadow: #00000080 0 0 8px;" src="image/ishape_img/sam.png">
+        </a>
+      </div>
+      <br>
+      <p>SAM's experiments <a href="https://arxiv.org/abs/2304.02643">[link]</a> demonstrate that iShape dataset
+        possesses the highest quality ground truth (GT) and is also the most challenging segmentation dataset.
+        iShape dataset can serve as a multimodal benchmark for Artificial General Intelligence (AGI).</p>
+      <hr>
+    </details>
     <div align="center">
-
       <h1 id="ishape-irregular-shape-instance-segmentation"><a class="anchor"
           name="ishape-irregular-shape-instance-segmentation" href="#ishape-irregular-shape-instance-segmentation"><span
             class="octicon octicon-link"></span></a>iShape: Irregular Shape Instance Segmentation</h1>
@@ -751,7 +764,6 @@
         China<br><sup>4</sup>Beijing University of Chemical Technology, Beijing, China<br><sup>5</sup>Kuaishou
         Technology, Beijing, China </p>
       <div align="center">
-
         <br>
         <a href="image/ishape_img/wire5.png">
           <img style="width:200px" src="image/ishape_img/wire5.png">
@@ -759,29 +771,22 @@
         <a href="image/ishape_img/wire-inst.png">
           <img style="width:200px" src="image/ishape_img/wire-inst.png">
         </a>
-
-
         <p style="width:670px; text-align: justify">A typical scene of objects with irregular shape and similar
           appearance. It has many characteristics that challenge instance segmentation algorithms, including the large
           overlaps between bounding boxes of objects, extreme aspect ratios (bounding box of the grey mask), and large
           numbers of connected components in one instance (green and blue masks).</p>
-
         <br>
-
       </div>
-
-
       <hr>
       <h3 id="abstract--paper--dataset--baselines--benchmark--misc"><a class="anchor"
           name="abstract--paper--dataset--baselines--benchmark--misc"
           href="#abstract--paper--dataset--baselines--benchmark--misc"><span class="octicon octicon-link"></span></a><a
           href="#1-abstract">Abstract</a> | <a href="#2-paper">Paper</a> | <a href="#3-our-ishape-dataset">Dataset</a> |
         <a href="#4-our-baseline-arbitrary-shape-instance-segmentation">Baselines</a> | <a
-          href="#5-benchmark">Benchmark</a> | <a href="#6-misc">Misc</a></h3>
+          href="#5-benchmark">Benchmark</a> | <a href="#6-misc">Misc</a>
+      </h3>
       <!-- | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool)  -->
-
     </div>
-
     <h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span
           class="octicon octicon-link"></span></a>1. Abstract</h2>
     <p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to
@@ -797,24 +802,19 @@
         algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve
         <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental
         results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
-
     <h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2.
       Paper</h2>
     <div align="center">
-
       <a href="https://arxiv.org/abs/2109.15068">
         <img style="width:150px;border:1px solid black;box-shadow: 10px 10px 10px rgba(0,0,0,.5);"
           src="image/ishape_img/paper.png">
       </a>
-
       <br>
       <br>
-
       <p><a href="https://arxiv.org/abs/2109.15068"><strong>Paper on arXiv =&gt; "Irregular Shape Instance
             Segmentation"</strong></a> | <a
           href="https://ylshare.oss-cn-shanghai.aliyuncs.com/iShape-appendix.pdf"><strong>Appendix</strong></a></p>
     </div>
-
     <h2 id="3-our-ishape-dataset"><a class="anchor" name="3-our-ishape-dataset" href="#3-our-ishape-dataset"><span
           class="octicon octicon-link"></span></a>3. Our iShape dataset</h2>
     <p>In this work, we present iShape, a new dataset designed for <strong>i</strong>rregular <strong>Shape</strong>
@@ -822,54 +822,44 @@
       iShape-Fence, iShape-Log, iShape-Hanger, and iShape-Wire. As shown in picture below, each sub-dataset represents
       scenes of a typical irregular shape, for example, strip shape, hollow shape, and mesh shape.</p>
     <div align="center">
-
       <p><img src="image/ishape_img/ishape.png" alt=""></p>
     </div>
-
     <h3 id="download-ishape-dataset-45gb"><a class="anchor" name="download-ishape-dataset-45gb"
         href="#download-ishape-dataset-45gb"><span class="octicon octicon-link"></span></a>Download iShape dataset
       (4.5GB):</h3>
     <!-- **Download on [=> Kaggle](https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation)** -->
-
     <p><strong>iShape download URL:</strong> </p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://39.105.21.95:9000/ishape/ishape_dataset.tar</p>
-
-    <p>Or from our oss URL: </p>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar</p>
-
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://113.44.140.251:9000/ishape/ishape_dataset.tar </p>
+    <p>Or backup URL: </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar </p>
     <pre class="language-bash" tabindex="0"><code class="language-bash">$ md5sum ishape_dataset.tar
 <span class="token comment"># 2b3bd15e6ec762bbc03dddc5e4bc24df</span>
 </code></pre>
-    <h3 id="browse-ishape-dataset-online-with-visualization--ishape_dataset"><a class="anchor"
-        name="browse-ishape-dataset-online-with-visualization--ishape_dataset"
-        href="#browse-ishape-dataset-online-with-visualization--ishape_dataset"><span
-          class="octicon octicon-link"></span></a>Browse iShape dataset online with visualization: =&gt; <a
-        href="http://39.105.21.95:9000/ishape/">ishape_dataset</a></h3>
+    <!-- ### Browse iShape dataset online with visualization: => [ishape_dataset](http://39.105.21.95:9000/ishape/) -->
     <p><strong>Dataset format:</strong> iShape provides both Cityscapes and COCO style instance segmentation
       annotations.</p>
     <ul>
       <li>Cityscapes style: store as <code>*.png</code> files under directory <code>instance_map</code>. Similar to
         <code>*_instanceIds.png</code> in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel
-        value <code>x</code> means that the pixel belongs to the instance ID is <code>x</code>.</li>
+        value <code>x</code> means that the pixel belongs to the instance ID is <code>x</code>.
+      </li>
       <li>COCO style: It should be pointed out that the COCO style annotations encode masks by <a
           href="https://en.wikipedia.org/wiki/Run-length_encoding">Run-Length Encoding(RLE)</a>, because polygon can not
         represent hollow-shaped masks.</li>
     </ul>
     <!-- **Overview infomation of the iShape dataset:** 
-
-<div align="center">
-
-| **# sub-datasets** | **# imgages** | **# instances** | **# instance/image** |
-| ------------------ | ------------: | --------------: | -------------------: |
-| iShape-Antenna     |           370 |           3,036 |                 8.20 |
-| iShape-Branch      |         2,500 |          26,046 |                10.14 |
-| iShape-Fence       |         2,500 |           7,870 |                 3.15 |
-| iShape-Hanger      |         2,500 |          49,275 |                19,71 |
-| iShape-Log         |         2,500 |          72,144 |                28.86 |
-| iShape-Wire        |         2,500 |          17,469 |                 6.99 |
-
-</div> -->
-
+            <div align="center">
+            
+            | **# sub-datasets** | **# imgages** | **# instances** | **# instance/image** |
+            | ------------------ | ------------: | --------------: | -------------------: |
+            | iShape-Antenna     |           370 |           3,036 |                 8.20 |
+            | iShape-Branch      |         2,500 |          26,046 |                10.14 |
+            | iShape-Fence       |         2,500 |           7,870 |                 3.15 |
+            | iShape-Hanger      |         2,500 |          49,275 |                19,71 |
+            | iShape-Log         |         2,500 |          72,144 |                28.86 |
+            | iShape-Wire        |         2,500 |          17,469 |                 6.99 |
+            
+            </div> -->
     <p><strong>Source code about the dataset:</strong></p>
     <ul>
       <li><a
@@ -881,7 +871,6 @@
     <p><strong>Dataset license:</strong> <a href="https://creativecommons.org/publicdomain/zero/1.0/">Public domain
         (CC0)</a> </p>
     <img style="width:130px" src="image/misc/Public_Domain_Mark_button.svg.png">
-
     <h2 id="4-our-baseline-arbitrary-shape-instance-segmentation"><a class="anchor"
         name="4-our-baseline-arbitrary-shape-instance-segmentation"
         href="#4-our-baseline-arbitrary-shape-instance-segmentation"><span class="octicon octicon-link"></span></a>4.
@@ -895,27 +884,19 @@
       instance segmentation baseline, called ASIS, which includes principles of generating effective and efficient
       affinity kernel based on dataset property to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance
       <b>S</b>egmentation. Experimental results show that the proposed baseline outperforms existing state-of-the-art
-      methods by a large margin on iShape.</p>
-
-
+      methods by a large margin on iShape.
+    </p>
     <div align="center">
-
       <br>
-
       <img style="width:705px" src="image/ishape_img/overview.png">
-
-
       <p style="width:705px; text-align: justify"><b>Overview of ASIS.</b> In the training stage, the network learns to
         predict the semantic segmenation as well as the affinity map. In the inference stage, first, build graph
         operation transforms the predicted affinity map into a sparse undirected graph by setting pixels as nodes and
         the affinity between pixels as edges. Then the graph merge algorithm is applied to the graph. The algorithm will
         cluster the pixels to yield class-agnostic instance segmentation. Finally, the class assign module will add a
         category with confidence to each instance using the result of semantic segmentation.</p>
-
       <br>
-
     </div>
-
     <h3 id="baseline-code-will-release-soon"><a class="anchor" name="baseline-code-will-release-soon"
         href="#baseline-code-will-release-soon"><span class="octicon octicon-link"></span></a><strong>Baseline code will
         release soon.</strong></h3>
@@ -928,8 +909,6 @@
     <p>Qualitative results on iShape. We report the mask mmAP of six sub-datasets and the average of mmAP. To be fair,
       all methods use ResNet-50 as the backbone. ``w/o'' denotes ``without''.</p>
     <div align="center">
-
-
       <table>
         <thead>
           <tr>
@@ -1064,7 +1043,6 @@
         </tbody>
       </table>
     </div>
-
     <h4 id="52-qualitative-results"><a class="anchor" name="52-qualitative-results" href="#52-qualitative-results"><span
           class="octicon octicon-link"></span></a>5.2 Qualitative results</h4>
     <p>Click to open the big image.</p>
@@ -1210,44 +1188,34 @@
         </tr>
       </tbody>
     </table>
-
-
-
     <br>
     <div align="center">
       <div align="center" style="width:300px">
-
         <p><a href="ishape_experiment.html"><img src="image/ishape_img/result.png" alt=""></a><br>More qualitative
           results are <a href="ishape_experiment.html">=&gt; <strong>here</strong></a></p>
       </div>
     </div>
-
     <!-- 
-## 5. Leaderboard
-
-
-<div style="text-align: justify">
-
-[**iShape-Leaderboard**]()
-
-If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  [`rpctool`]() (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click [here]() to submit.
-
-</div> -->
-
-
+            ## 5. Leaderboard
+            
+            
+            <div style="text-align: justify">
+            
+            [**iShape-Leaderboard**]()
+            
+            If you have been successful in creating a model based on the training set and it performs well on the validation set, we encourage you to run your model on the test set. The  [`rpctool`]() (in the next section in this project page) will contribute to return the corresponding results of the evaluation metrics. You can submit your results on the RPC leaderboard by creating a new issue. Your results will be ranked in the leaderboard and to benchmark your approach against that of other machine learners. We are looking forward to your submission. Please click [here]() to submit.
+            
+            </div> -->
     <h2 id="6-misc"><a class="anchor" name="6-misc" href="#6-misc"><span class="octicon octicon-link"></span></a>6. Misc
     </h2>
     <p>If you have any questions about iShape, feel free to submit an issue here: <a
         href="https://github.com/iShape/iShape.github.io/issues">issues</a>.</p>
     <!-- ## 6. ATTN
-
-<div style="text-align: justify">
-
-This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Lei Yang (yanglei@megvii.com).
-
-</div> -->
-
-
+            <div style="text-align: justify">
+            
+            This dataset and code packages are free for academic usage. You can run them at your own risk. For other purposes, please contact the corresponding author Lei Yang (yanglei@megvii.com).
+            
+            </div> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGRJZ0J17J"></script>
     <script>
@@ -1259,8 +1227,6 @@ This dataset and code packages are free for academic usage. You can run them at 
     </script>
   </div>
 </body>
-
-
 <div style="all: initial;">
   <div id="__hcfy__" style="all: initial;"></div>
 </div>
