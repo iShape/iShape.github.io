@@ -1,395 +1,732 @@
-<html><head><meta name="color-scheme" content="light dark"><style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
-  .CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
-  .CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
-  .CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
-  </style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
-  .CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
-  .CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
-  .CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
-  .CtxtMenu_MenuClose:hover:focus {  outline:none}
-  </style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
-  .CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
-  .CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
-  .CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
-  .CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
-  .CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
-  .CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
-  .CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
-  .CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
-  .CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
-  .CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
-  .CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
-  .CtxtMenu_MenuSlider {  left: .1em;}
-  .CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
-  .CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
-  .CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
-  .CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
-  .CtxtMenu_MenuDisabled {  color:GrayText}
-  .CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
-  .CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
-  .CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
-  .CtxtMenu_ContextMenu:focus {  outline:none}
-  .CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
-  .CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
-  .CtxtMenu_SelectionItem {  padding-right: 1em;}
-  .CtxtMenu_Selection {  right: 40%; width:50%; }
-  .CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
-  .CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
-  .CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
-  </style><link rel="icon" href="dark/16x16.png"><style id="MJX-CHTML-styles">
-  mjx-container[jax="CHTML"] {
-    line-height: 0;
-  }
-  
-  mjx-container [space="1"] {
-    margin-left: .111em;
-  }
-  
-  mjx-container [space="2"] {
-    margin-left: .167em;
-  }
-  
-  mjx-container [space="3"] {
-    margin-left: .222em;
-  }
-  
-  mjx-container [space="4"] {
-    margin-left: .278em;
-  }
-  
-  mjx-container [space="5"] {
-    margin-left: .333em;
-  }
-  
-  mjx-container [rspace="1"] {
-    margin-right: .111em;
-  }
-  
-  mjx-container [rspace="2"] {
-    margin-right: .167em;
-  }
-  
-  mjx-container [rspace="3"] {
-    margin-right: .222em;
-  }
-  
-  mjx-container [rspace="4"] {
-    margin-right: .278em;
-  }
-  
-  mjx-container [rspace="5"] {
-    margin-right: .333em;
-  }
-  
-  mjx-container [size="s"] {
-    font-size: 70.7%;
-  }
-  
-  mjx-container [size="ss"] {
-    font-size: 50%;
-  }
-  
-  mjx-container [size="Tn"] {
-    font-size: 60%;
-  }
-  
-  mjx-container [size="sm"] {
-    font-size: 85%;
-  }
-  
-  mjx-container [size="lg"] {
-    font-size: 120%;
-  }
-  
-  mjx-container [size="Lg"] {
-    font-size: 144%;
-  }
-  
-  mjx-container [size="LG"] {
-    font-size: 173%;
-  }
-  
-  mjx-container [size="hg"] {
-    font-size: 207%;
-  }
-  
-  mjx-container [size="HG"] {
-    font-size: 249%;
-  }
-  
-  mjx-container [width="full"] {
-    width: 100%;
-  }
-  
-  mjx-box {
-    display: inline-block;
-  }
-  
-  mjx-block {
-    display: block;
-  }
-  
-  mjx-itable {
-    display: inline-table;
-  }
-  
-  mjx-row {
-    display: table-row;
-  }
-  
-  mjx-row > * {
-    display: table-cell;
-  }
-  
-  mjx-mtext {
-    display: inline-block;
-  }
-  
-  mjx-mstyle {
-    display: inline-block;
-  }
-  
-  mjx-merror {
-    display: inline-block;
-    color: red;
-    background-color: yellow;
-  }
-  
-  mjx-mphantom {
-    visibility: hidden;
-  }
-  
-  _::-webkit-full-page-media, _:future, :root mjx-container {
-    will-change: opacity;
-  }
-  
-  mjx-assistive-mml {
-    position: absolute !important;
-    top: 0px;
-    left: 0px;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 1px 0px 0px 0px !important;
-    border: 0px !important;
-    display: block !important;
-    width: auto !important;
-    overflow: hidden !important;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  mjx-assistive-mml[display="block"] {
-    width: 100% !important;
-  }
-  
-  mjx-c::before {
-    display: block;
-    width: 0;
-  }
-  
-  .MJX-TEX {
-    font-family: MJXZERO, MJXTEX;
-  }
-  
-  .TEX-B {
-    font-family: MJXZERO, MJXTEX-B;
-  }
-  
-  .TEX-I {
-    font-family: MJXZERO, MJXTEX-I;
-  }
-  
-  .TEX-MI {
-    font-family: MJXZERO, MJXTEX-MI;
-  }
-  
-  .TEX-BI {
-    font-family: MJXZERO, MJXTEX-BI;
-  }
-  
-  .TEX-S1 {
-    font-family: MJXZERO, MJXTEX-S1;
-  }
-  
-  .TEX-S2 {
-    font-family: MJXZERO, MJXTEX-S2;
-  }
-  
-  .TEX-S3 {
-    font-family: MJXZERO, MJXTEX-S3;
-  }
-  
-  .TEX-S4 {
-    font-family: MJXZERO, MJXTEX-S4;
-  }
-  
-  .TEX-A {
-    font-family: MJXZERO, MJXTEX-A;
-  }
-  
-  .TEX-C {
-    font-family: MJXZERO, MJXTEX-C;
-  }
-  
-  .TEX-CB {
-    font-family: MJXZERO, MJXTEX-CB;
-  }
-  
-  .TEX-FR {
-    font-family: MJXZERO, MJXTEX-FR;
-  }
-  
-  .TEX-FRB {
-    font-family: MJXZERO, MJXTEX-FRB;
-  }
-  
-  .TEX-SS {
-    font-family: MJXZERO, MJXTEX-SS;
-  }
-  
-  .TEX-SSB {
-    font-family: MJXZERO, MJXTEX-SSB;
-  }
-  
-  .TEX-SSI {
-    font-family: MJXZERO, MJXTEX-SSI;
-  }
-  
-  .TEX-SC {
-    font-family: MJXZERO, MJXTEX-SC;
-  }
-  
-  .TEX-T {
-    font-family: MJXZERO, MJXTEX-T;
-  }
-  
-  .TEX-V {
-    font-family: MJXZERO, MJXTEX-V;
-  }
-  
-  .TEX-VB {
-    font-family: MJXZERO, MJXTEX-VB;
-  }
-  
-  mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
-    font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
-  }
-  
-  @font-face /* 0 */ {
-    font-family: MJXZERO;
-    src: url("mathjax/fonts/MathJax_Zero.woff") format("woff");
-  }
-  
-  @font-face /* 1 */ {
-    font-family: MJXTEX;
-    src: url("mathjax/fonts/MathJax_Main-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 2 */ {
-    font-family: MJXTEX-B;
-    src: url("mathjax/fonts/MathJax_Main-Bold.woff") format("woff");
-  }
-  
-  @font-face /* 3 */ {
-    font-family: MJXTEX-I;
-    src: url("mathjax/fonts/MathJax_Math-Italic.woff") format("woff");
-  }
-  
-  @font-face /* 4 */ {
-    font-family: MJXTEX-MI;
-    src: url("mathjax/fonts/MathJax_Main-Italic.woff") format("woff");
-  }
-  
-  @font-face /* 5 */ {
-    font-family: MJXTEX-BI;
-    src: url("mathjax/fonts/MathJax_Math-BoldItalic.woff") format("woff");
-  }
-  
-  @font-face /* 6 */ {
-    font-family: MJXTEX-S1;
-    src: url("mathjax/fonts/MathJax_Size1-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 7 */ {
-    font-family: MJXTEX-S2;
-    src: url("mathjax/fonts/MathJax_Size2-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 8 */ {
-    font-family: MJXTEX-S3;
-    src: url("mathjax/fonts/MathJax_Size3-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 9 */ {
-    font-family: MJXTEX-S4;
-    src: url("mathjax/fonts/MathJax_Size4-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 10 */ {
-    font-family: MJXTEX-A;
-    src: url("mathjax/fonts/MathJax_AMS-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 11 */ {
-    font-family: MJXTEX-C;
-    src: url("mathjax/fonts/MathJax_Calligraphic-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 12 */ {
-    font-family: MJXTEX-CB;
-    src: url("mathjax/fonts/MathJax_Calligraphic-Bold.woff") format("woff");
-  }
-  
-  @font-face /* 13 */ {
-    font-family: MJXTEX-FR;
-    src: url("mathjax/fonts/MathJax_Fraktur-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 14 */ {
-    font-family: MJXTEX-FRB;
-    src: url("mathjax/fonts/MathJax_Fraktur-Bold.woff") format("woff");
-  }
-  
-  @font-face /* 15 */ {
-    font-family: MJXTEX-SS;
-    src: url("mathjax/fonts/MathJax_SansSerif-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 16 */ {
-    font-family: MJXTEX-SSB;
-    src: url("mathjax/fonts/MathJax_SansSerif-Bold.woff") format("woff");
-  }
-  
-  @font-face /* 17 */ {
-    font-family: MJXTEX-SSI;
-    src: url("mathjax/fonts/MathJax_SansSerif-Italic.woff") format("woff");
-  }
-  
-  @font-face /* 18 */ {
-    font-family: MJXTEX-SC;
-    src: url("mathjax/fonts/MathJax_Script-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 19 */ {
-    font-family: MJXTEX-T;
-    src: url("mathjax/fonts/MathJax_Typewriter-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 20 */ {
-    font-family: MJXTEX-V;
-    src: url("mathjax/fonts/MathJax_Vector-Regular.woff") format("woff");
-  }
-  
-  @font-face /* 21 */ {
-    font-family: MJXTEX-VB;
-    src: url("mathjax/fonts/MathJax_Vector-Bold.woff") format("woff");
-  }
-  </style></head>
-  
-  <body class="_theme-github"><link rel="stylesheet" type="text/css" href="github.css" id="_theme"><link rel="stylesheet" type="text/css" href="prism.min.css" id="_prism"><div id="_html" class="markdown-body">
+<html>
+
+<head>
+  <meta name="color-scheme" content="light dark">
+  <style type="text/css">
+    .CtxtMenu_InfoClose {
+      top: .2em;
+      right: .2em;
+    }
+
+    .CtxtMenu_InfoContent {
+      overflow: auto;
+      text-align: left;
+      font-size: 80%;
+      padding: .4em .6em;
+      border: 1px inset;
+      margin: 1em 0px;
+      max-height: 20em;
+      max-width: 30em;
+      background-color: #EEEEEE;
+      white-space: normal;
+    }
+
+    .CtxtMenu_Info.CtxtMenu_MousePost {
+      outline: none;
+    }
+
+    .CtxtMenu_Info {
+      position: fixed;
+      left: 50%;
+      width: auto;
+      text-align: center;
+      border: 3px outset;
+      padding: 1em 2em;
+      background-color: #DDDDDD;
+      color: black;
+      cursor: default;
+      font-family: message-box;
+      font-size: 120%;
+      font-style: normal;
+      text-indent: 0;
+      text-transform: none;
+      line-height: normal;
+      letter-spacing: normal;
+      word-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      float: none;
+      z-index: 201;
+      border-radius: 15px;
+      /* Opera 10.5 and IE9 */
+      -webkit-border-radius: 15px;
+      /* Safari and Chrome */
+      -moz-border-radius: 15px;
+      /* Firefox */
+      -khtml-border-radius: 15px;
+      /* Konqueror */
+      box-shadow: 0px 10px 20px #808080;
+      /* Opera 10.5 and IE9 */
+      -webkit-box-shadow: 0px 10px 20px #808080;
+      /* Safari 3 & Chrome */
+      -moz-box-shadow: 0px 10px 20px #808080;
+      /* Forefox 3.5 */
+      -khtml-box-shadow: 0px 10px 20px #808080;
+      /* Konqueror */
+      filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true");
+      /* IE */
+    }
+  </style>
+  <style type="text/css">
+    .CtxtMenu_MenuClose {
+      position: absolute;
+      cursor: pointer;
+      display: inline-block;
+      border: 2px solid #AAA;
+      border-radius: 18px;
+      -webkit-border-radius: 18px;
+      /* Safari and Chrome */
+      -moz-border-radius: 18px;
+      /* Firefox */
+      -khtml-border-radius: 18px;
+      /* Konqueror */
+      font-family: "Courier New", Courier;
+      font-size: 24px;
+      color: #F0F0F0
+    }
+
+    .CtxtMenu_MenuClose span {
+      display: block;
+      background-color: #AAA;
+      border: 1.5px solid;
+      border-radius: 18px;
+      -webkit-border-radius: 18px;
+      /* Safari and Chrome */
+      -moz-border-radius: 18px;
+      /* Firefox */
+      -khtml-border-radius: 18px;
+      /* Konqueror */
+      line-height: 0;
+      padding: 8px 0 6px
+        /* may need to be browser-specific */
+    }
+
+    .CtxtMenu_MenuClose:hover {
+      color: white !important;
+      border: 2px solid #CCC !important
+    }
+
+    .CtxtMenu_MenuClose:hover span {
+      background-color: #CCC !important
+    }
+
+    .CtxtMenu_MenuClose:hover:focus {
+      outline: none
+    }
+  </style>
+  <style type="text/css">
+    .CtxtMenu_Menu {
+      position: absolute;
+      background-color: white;
+      color: black;
+      width: auto;
+      padding: 5px 0px;
+      border: 1px solid #CCCCCC;
+      margin: 0;
+      cursor: default;
+      font: menu;
+      text-align: left;
+      text-indent: 0;
+      text-transform: none;
+      line-height: normal;
+      letter-spacing: normal;
+      word-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      float: none;
+      z-index: 201;
+      border-radius: 5px;
+      /* Opera 10.5 and IE9 */
+      -webkit-border-radius: 5px;
+      /* Safari and Chrome */
+      -moz-border-radius: 5px;
+      /* Firefox */
+      -khtml-border-radius: 5px;
+      /* Konqueror */
+      box-shadow: 0px 10px 20px #808080;
+      /* Opera 10.5 and IE9 */
+      -webkit-box-shadow: 0px 10px 20px #808080;
+      /* Safari 3 & Chrome */
+      -moz-box-shadow: 0px 10px 20px #808080;
+      /* Forefox 3.5 */
+      -khtml-box-shadow: 0px 10px 20px #808080;
+      /* Konqueror */
+    }
+
+    .CtxtMenu_MenuItem {
+      padding: 1px 2em;
+      background: transparent;
+    }
+
+    .CtxtMenu_MenuArrow {
+      position: absolute;
+      right: .5em;
+      padding-top: .25em;
+      color: #666666;
+      font-family: null;
+      font-size: .75em
+    }
+
+    .CtxtMenu_MenuActive .CtxtMenu_MenuArrow {
+      color: white
+    }
+
+    .CtxtMenu_MenuArrow.CtxtMenu_RTL {
+      left: .5em;
+      right: auto
+    }
+
+    .CtxtMenu_MenuCheck {
+      position: absolute;
+      left: .7em;
+      font-family: null
+    }
+
+    .CtxtMenu_MenuCheck.CtxtMenu_RTL {
+      right: .7em;
+      left: auto
+    }
+
+    .CtxtMenu_MenuRadioCheck {
+      position: absolute;
+      left: .7em;
+    }
+
+    .CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {
+      right: .7em;
+      left: auto
+    }
+
+    .CtxtMenu_MenuInputBox {
+      padding-left: 1em;
+      right: .5em;
+      color: #666666;
+      font-family: null;
+    }
+
+    .CtxtMenu_MenuInputBox.CtxtMenu_RTL {
+      left: .1em;
+    }
+
+    .CtxtMenu_MenuComboBox {
+      left: .1em;
+      padding-bottom: .5em;
+    }
+
+    .CtxtMenu_MenuSlider {
+      left: .1em;
+    }
+
+    .CtxtMenu_SliderValue {
+      position: absolute;
+      right: .1em;
+      padding-top: .25em;
+      color: #333333;
+      font-size: .75em
+    }
+
+    .CtxtMenu_SliderBar {
+      outline: none;
+      background: #d3d3d3
+    }
+
+    .CtxtMenu_MenuLabel {
+      padding: 1px 2em 3px 1.33em;
+      font-style: italic
+    }
+
+    .CtxtMenu_MenuRule {
+      border-top: 1px solid #DDDDDD;
+      margin: 4px 3px;
+    }
+
+    .CtxtMenu_MenuDisabled {
+      color: GrayText
+    }
+
+    .CtxtMenu_MenuActive {
+      background-color: #606872;
+      color: white;
+    }
+
+    .CtxtMenu_MenuDisabled:focus {
+      background-color: #E8E8E8
+    }
+
+    .CtxtMenu_MenuLabel:focus {
+      background-color: #E8E8E8
+    }
+
+    .CtxtMenu_ContextMenu:focus {
+      outline: none
+    }
+
+    .CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {
+      outline: none
+    }
+
+    .CtxtMenu_SelectionMenu {
+      position: relative;
+      float: left;
+      border-bottom: none;
+      -webkit-box-shadow: none;
+      -webkit-border-radius: 0px;
+    }
+
+    .CtxtMenu_SelectionItem {
+      padding-right: 1em;
+    }
+
+    .CtxtMenu_Selection {
+      right: 40%;
+      width: 50%;
+    }
+
+    .CtxtMenu_SelectionBox {
+      padding: 0em;
+      max-height: 20em;
+      max-width: none;
+      background-color: #FFFFFF;
+    }
+
+    .CtxtMenu_SelectionDivider {
+      clear: both;
+      border-top: 2px solid #000000;
+    }
+
+    .CtxtMenu_Menu .CtxtMenu_MenuClose {
+      top: -10px;
+      left: -10px
+    }
+  </style>
+  <link rel="icon" href="dark/16x16.png">
+  <style id="MJX-CHTML-styles">
+    mjx-container[jax="CHTML"] {
+      line-height: 0;
+    }
+
+    mjx-container [space="1"] {
+      margin-left: .111em;
+    }
+
+    mjx-container [space="2"] {
+      margin-left: .167em;
+    }
+
+    mjx-container [space="3"] {
+      margin-left: .222em;
+    }
+
+    mjx-container [space="4"] {
+      margin-left: .278em;
+    }
+
+    mjx-container [space="5"] {
+      margin-left: .333em;
+    }
+
+    mjx-container [rspace="1"] {
+      margin-right: .111em;
+    }
+
+    mjx-container [rspace="2"] {
+      margin-right: .167em;
+    }
+
+    mjx-container [rspace="3"] {
+      margin-right: .222em;
+    }
+
+    mjx-container [rspace="4"] {
+      margin-right: .278em;
+    }
+
+    mjx-container [rspace="5"] {
+      margin-right: .333em;
+    }
+
+    mjx-container [size="s"] {
+      font-size: 70.7%;
+    }
+
+    mjx-container [size="ss"] {
+      font-size: 50%;
+    }
+
+    mjx-container [size="Tn"] {
+      font-size: 60%;
+    }
+
+    mjx-container [size="sm"] {
+      font-size: 85%;
+    }
+
+    mjx-container [size="lg"] {
+      font-size: 120%;
+    }
+
+    mjx-container [size="Lg"] {
+      font-size: 144%;
+    }
+
+    mjx-container [size="LG"] {
+      font-size: 173%;
+    }
+
+    mjx-container [size="hg"] {
+      font-size: 207%;
+    }
+
+    mjx-container [size="HG"] {
+      font-size: 249%;
+    }
+
+    mjx-container [width="full"] {
+      width: 100%;
+    }
+
+    mjx-box {
+      display: inline-block;
+    }
+
+    mjx-block {
+      display: block;
+    }
+
+    mjx-itable {
+      display: inline-table;
+    }
+
+    mjx-row {
+      display: table-row;
+    }
+
+    mjx-row>* {
+      display: table-cell;
+    }
+
+    mjx-mtext {
+      display: inline-block;
+    }
+
+    mjx-mstyle {
+      display: inline-block;
+    }
+
+    mjx-merror {
+      display: inline-block;
+      color: red;
+      background-color: yellow;
+    }
+
+    mjx-mphantom {
+      visibility: hidden;
+    }
+
+    _::-webkit-full-page-media,
+    _:future,
+    :root mjx-container {
+      will-change: opacity;
+    }
+
+    mjx-assistive-mml {
+      position: absolute !important;
+      top: 0px;
+      left: 0px;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 1px 0px 0px 0px !important;
+      border: 0px !important;
+      display: block !important;
+      width: auto !important;
+      overflow: hidden !important;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    mjx-assistive-mml[display="block"] {
+      width: 100% !important;
+    }
+
+    mjx-c::before {
+      display: block;
+      width: 0;
+    }
+
+    .MJX-TEX {
+      font-family: MJXZERO, MJXTEX;
+    }
+
+    .TEX-B {
+      font-family: MJXZERO, MJXTEX-B;
+    }
+
+    .TEX-I {
+      font-family: MJXZERO, MJXTEX-I;
+    }
+
+    .TEX-MI {
+      font-family: MJXZERO, MJXTEX-MI;
+    }
+
+    .TEX-BI {
+      font-family: MJXZERO, MJXTEX-BI;
+    }
+
+    .TEX-S1 {
+      font-family: MJXZERO, MJXTEX-S1;
+    }
+
+    .TEX-S2 {
+      font-family: MJXZERO, MJXTEX-S2;
+    }
+
+    .TEX-S3 {
+      font-family: MJXZERO, MJXTEX-S3;
+    }
+
+    .TEX-S4 {
+      font-family: MJXZERO, MJXTEX-S4;
+    }
+
+    .TEX-A {
+      font-family: MJXZERO, MJXTEX-A;
+    }
+
+    .TEX-C {
+      font-family: MJXZERO, MJXTEX-C;
+    }
+
+    .TEX-CB {
+      font-family: MJXZERO, MJXTEX-CB;
+    }
+
+    .TEX-FR {
+      font-family: MJXZERO, MJXTEX-FR;
+    }
+
+    .TEX-FRB {
+      font-family: MJXZERO, MJXTEX-FRB;
+    }
+
+    .TEX-SS {
+      font-family: MJXZERO, MJXTEX-SS;
+    }
+
+    .TEX-SSB {
+      font-family: MJXZERO, MJXTEX-SSB;
+    }
+
+    .TEX-SSI {
+      font-family: MJXZERO, MJXTEX-SSI;
+    }
+
+    .TEX-SC {
+      font-family: MJXZERO, MJXTEX-SC;
+    }
+
+    .TEX-T {
+      font-family: MJXZERO, MJXTEX-T;
+    }
+
+    .TEX-V {
+      font-family: MJXZERO, MJXTEX-V;
+    }
+
+    .TEX-VB {
+      font-family: MJXZERO, MJXTEX-VB;
+    }
+
+    mjx-stretchy-v mjx-c,
+    mjx-stretchy-h mjx-c {
+      font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+    }
+
+    @font-face
+
+    /* 0 */
+      {
+      font-family: MJXZERO;
+      src: url("mathjax/fonts/MathJax_Zero.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 1 */
+      {
+      font-family: MJXTEX;
+      src: url("mathjax/fonts/MathJax_Main-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 2 */
+      {
+      font-family: MJXTEX-B;
+      src: url("mathjax/fonts/MathJax_Main-Bold.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 3 */
+      {
+      font-family: MJXTEX-I;
+      src: url("mathjax/fonts/MathJax_Math-Italic.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 4 */
+      {
+      font-family: MJXTEX-MI;
+      src: url("mathjax/fonts/MathJax_Main-Italic.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 5 */
+      {
+      font-family: MJXTEX-BI;
+      src: url("mathjax/fonts/MathJax_Math-BoldItalic.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 6 */
+      {
+      font-family: MJXTEX-S1;
+      src: url("mathjax/fonts/MathJax_Size1-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 7 */
+      {
+      font-family: MJXTEX-S2;
+      src: url("mathjax/fonts/MathJax_Size2-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 8 */
+      {
+      font-family: MJXTEX-S3;
+      src: url("mathjax/fonts/MathJax_Size3-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 9 */
+      {
+      font-family: MJXTEX-S4;
+      src: url("mathjax/fonts/MathJax_Size4-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 10 */
+      {
+      font-family: MJXTEX-A;
+      src: url("mathjax/fonts/MathJax_AMS-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 11 */
+      {
+      font-family: MJXTEX-C;
+      src: url("mathjax/fonts/MathJax_Calligraphic-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 12 */
+      {
+      font-family: MJXTEX-CB;
+      src: url("mathjax/fonts/MathJax_Calligraphic-Bold.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 13 */
+      {
+      font-family: MJXTEX-FR;
+      src: url("mathjax/fonts/MathJax_Fraktur-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 14 */
+      {
+      font-family: MJXTEX-FRB;
+      src: url("mathjax/fonts/MathJax_Fraktur-Bold.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 15 */
+      {
+      font-family: MJXTEX-SS;
+      src: url("mathjax/fonts/MathJax_SansSerif-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 16 */
+      {
+      font-family: MJXTEX-SSB;
+      src: url("mathjax/fonts/MathJax_SansSerif-Bold.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 17 */
+      {
+      font-family: MJXTEX-SSI;
+      src: url("mathjax/fonts/MathJax_SansSerif-Italic.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 18 */
+      {
+      font-family: MJXTEX-SC;
+      src: url("mathjax/fonts/MathJax_Script-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 19 */
+      {
+      font-family: MJXTEX-T;
+      src: url("mathjax/fonts/MathJax_Typewriter-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 20 */
+      {
+      font-family: MJXTEX-V;
+      src: url("mathjax/fonts/MathJax_Vector-Regular.woff") format("woff");
+    }
+
+    @font-face
+
+    /* 21 */
+      {
+      font-family: MJXTEX-VB;
+      src: url("mathjax/fonts/MathJax_Vector-Bold.woff") format("woff");
+    }
+  </style>
+</head>
+
+<body class="_theme-github">
+  <link rel="stylesheet" type="text/css" href="github.css" id="_theme">
+  <link rel="stylesheet" type="text/css" href="prism.min.css" id="_prism">
+  <div id="_html" class="markdown-body">
     <meta charset="UTF-8">
     <title>iShape datasets Project Page</title>
     <meta name="description" content="Irregular Shape Instance Segmentation">
@@ -397,77 +734,128 @@
     <link rel="shortcut icon" href="./favicon.ico">
 
 
-<div align="center">
+    <div align="center">
 
-<h1 id="ishape-irregular-shape-instance-segmentation"><a class="anchor" name="ishape-irregular-shape-instance-segmentation" href="#ishape-irregular-shape-instance-segmentation"><span class="octicon octicon-link"></span></a>iShape: Irregular Shape Instance Segmentation</h1>
-<p><strong><a href="https://github.com/DIYer22">Lei Yang<sup>1</sup></a> &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup> &nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=UM4qFCsAAAAJ&amp;hl=en">Yisheng He<sup>3</sup></a> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Zhenhang Huang<sup>4</sup>&nbsp;&nbsp;&nbsp; Haikun Zhang<sup>4</sup> &nbsp;&nbsp;&nbsp; <a href="https://brotherhuang.github.io/">Haibin Huang<sup>5</sup></a> &nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=bzzBut4AAAAJ&amp;hl=en">Haoqiang Fan<sup>1</sup></a></strong></p>
-<p><sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China<br><sup>2</sup>School of Software, Beihang University, Beijing, China<br><sup>3</sup>Hong Kong University of Science and Technology, Hong Kong, China<br><sup>4</sup>Beijing University of Chemical Technology, Beijing, China<br><sup>5</sup>Kuaishou Technology, Beijing, China  </p>
-<div align="center">
+      <h1 id="ishape-irregular-shape-instance-segmentation"><a class="anchor"
+          name="ishape-irregular-shape-instance-segmentation" href="#ishape-irregular-shape-instance-segmentation"><span
+            class="octicon octicon-link"></span></a>iShape: Irregular Shape Instance Segmentation</h1>
+      <p><strong><a href="https://github.com/DIYer22">Lei Yang<sup>1</sup></a> &nbsp;&nbsp;&nbsp; Ziwei Yan<sup>2</sup>
+          &nbsp;&nbsp;&nbsp; <a href="https://scholar.google.com/citations?user=UM4qFCsAAAAJ&amp;hl=en">Yisheng
+            He<sup>3</sup></a> &nbsp;&nbsp;&nbsp; Wei Sun<sup>1</sup>&nbsp;&nbsp;&nbsp; Zhenhang
+          Huang<sup>4</sup>&nbsp;&nbsp;&nbsp; Haikun Zhang<sup>4</sup> &nbsp;&nbsp;&nbsp; <a
+            href="https://brotherhuang.github.io/">Haibin Huang<sup>5</sup></a> &nbsp;&nbsp;&nbsp; <a
+            href="https://scholar.google.com/citations?user=bzzBut4AAAAJ&amp;hl=en">Haoqiang
+            Fan<sup>1</sup></a></strong></p>
+      <p><sup>1</sup>Megvii Research Beijing, Megvii Technology Ltd., Beijing, China<br><sup>2</sup>School of Software,
+        Beihang University, Beijing, China<br><sup>3</sup>Hong Kong University of Science and Technology, Hong Kong,
+        China<br><sup>4</sup>Beijing University of Chemical Technology, Beijing, China<br><sup>5</sup>Kuaishou
+        Technology, Beijing, China </p>
+      <div align="center">
 
-<br>
-<a href="image/ishape_img/wire5.png">
-  <img style="width:200px" src="image/ishape_img/wire5.png">
-</a>
-<a href="image/ishape_img/wire-inst.png">
-  <img style="width:200px" src="image/ishape_img/wire-inst.png">
-</a>
+        <br>
+        <a href="image/ishape_img/wire5.png">
+          <img style="width:200px" src="image/ishape_img/wire5.png">
+        </a>
+        <a href="image/ishape_img/wire-inst.png">
+          <img style="width:200px" src="image/ishape_img/wire-inst.png">
+        </a>
 
 
-<p style="width:670px; text-align: justify">A typical scene of objects with irregular shape and similar appearance. It has many characteristics that challenge instance segmentation algorithms, including the large overlaps between bounding boxes of objects, extreme aspect ratios (bounding box of the grey mask), and large numbers of connected components in one instance (green and blue masks).</p>
+        <p style="width:670px; text-align: justify">A typical scene of objects with irregular shape and similar
+          appearance. It has many characteristics that challenge instance segmentation algorithms, including the large
+          overlaps between bounding boxes of objects, extreme aspect ratios (bounding box of the grey mask), and large
+          numbers of connected components in one instance (green and blue masks).</p>
 
-<br>
+        <br>
 
-</div>
+      </div>
 
 
-<hr>
-<h3 id="abstract--paper--dataset--baselines--benchmark--misc"><a class="anchor" name="abstract--paper--dataset--baselines--benchmark--misc" href="#abstract--paper--dataset--baselines--benchmark--misc"><span class="octicon octicon-link"></span></a><a href="#1-abstract">Abstract</a> | <a href="#2-paper">Paper</a> | <a href="#3-our-ishape-dataset">Dataset</a> | <a href="#4-our-baseline-arbitrary-shape-instance-segmentation">Baselines</a> | <a href="#5-benchmark">Benchmark</a> | <a href="#6-misc">Misc</a></h3>
-  <!-- | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool)  -->
+      <hr>
+      <h3 id="abstract--paper--dataset--baselines--benchmark--misc"><a class="anchor"
+          name="abstract--paper--dataset--baselines--benchmark--misc"
+          href="#abstract--paper--dataset--baselines--benchmark--misc"><span class="octicon octicon-link"></span></a><a
+          href="#1-abstract">Abstract</a> | <a href="#2-paper">Paper</a> | <a href="#3-our-ishape-dataset">Dataset</a> |
+        <a href="#4-our-baseline-arbitrary-shape-instance-segmentation">Baselines</a> | <a
+          href="#5-benchmark">Benchmark</a> | <a href="#6-misc">Misc</a></h3>
+      <!-- | [Leaderboard](#5-Leaderboard) | [iShape-tool](#6-rpc-tool)  -->
 
-</div>
+    </div>
 
-<h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span class="octicon octicon-link"></span></a>1. Abstract</h2>
-<p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to promote the study of instance segmentation for objects with irregular shapes. Our key observation is that though irregularly shaped objects widely exist in daily life and industrial scenarios, they received little attention in the instance segmentation field due to the lack of corresponding datasets. To fill this gap, we propose iShape, an irregular shape dataset for instance segmentation. iShape contains six sub-datasets with one real and five synthetics, each represents a scene of a typical irregular shape. Unlike most existing instance segmentation datasets of regular objects, iShape has many characteristics that challenge existing instance segmentation algorithms, such as large overlaps between bounding boxes of instances, extreme aspect ratios, and large numbers of connected components per instance. We benchmark popular instance segmentation methods on iShape and find their performance drop dramatically. Hence, we propose an affinity-based instance segmentation algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
+    <h2 id="1-abstract"><a class="anchor" name="1-abstract" href="#1-abstract"><span
+          class="octicon octicon-link"></span></a>1. Abstract</h2>
+    <p style="text-align: justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In this paper, we introduce a brand new dataset to
+        promote the study of instance segmentation for objects with irregular shapes. Our key observation is that though
+        irregularly shaped objects widely exist in daily life and industrial scenarios, they received little attention
+        in the instance segmentation field due to the lack of corresponding datasets. To fill this gap, we propose
+        iShape, an irregular shape dataset for instance segmentation. iShape contains six sub-datasets with one real and
+        five synthetics, each represents a scene of a typical irregular shape. Unlike most existing instance
+        segmentation datasets of regular objects, iShape has many characteristics that challenge existing instance
+        segmentation algorithms, such as large overlaps between bounding boxes of instances, extreme aspect ratios, and
+        large numbers of connected components per instance. We benchmark popular instance segmentation methods on iShape
+        and find their performance drop dramatically. Hence, we propose an affinity-based instance segmentation
+        algorithm, called ASIS, as a stronger baseline. ASIS explicitly combines perception and reasoning to solve
+        <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance <b>S</b>egmentation including irregular objects. Experimental
+        results show that ASIS outperforms the state-of-the-art on iShape.</em></p>
 
-<h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2. Paper</h2>
-<div align="center">
+    <h2 id="2-paper"><a class="anchor" name="2-paper" href="#2-paper"><span class="octicon octicon-link"></span></a>2.
+      Paper</h2>
+    <div align="center">
 
-<a href="https://arxiv.org/abs/2109.15068">
-    <img style="width:150px;border:1px solid black;box-shadow: 10px 10px 10px rgba(0,0,0,.5);" src="image/ishape_img/paper.png">
-</a>   
+      <a href="https://arxiv.org/abs/2109.15068">
+        <img style="width:150px;border:1px solid black;box-shadow: 10px 10px 10px rgba(0,0,0,.5);"
+          src="image/ishape_img/paper.png">
+      </a>
 
-<br>
-<br>
+      <br>
+      <br>
 
-<p><a href="https://arxiv.org/abs/2109.15068"><strong>Paper on arXiv =&gt; "Irregular Shape Instance Segmentation"</strong></a> | <a href="https://ylshare.oss-cn-shanghai.aliyuncs.com/iShape-appendix.pdf"><strong>Appendix</strong></a></p>
-</div>
+      <p><a href="https://arxiv.org/abs/2109.15068"><strong>Paper on arXiv =&gt; "Irregular Shape Instance
+            Segmentation"</strong></a> | <a
+          href="https://ylshare.oss-cn-shanghai.aliyuncs.com/iShape-appendix.pdf"><strong>Appendix</strong></a></p>
+    </div>
 
-<h2 id="3-our-ishape-dataset"><a class="anchor" name="3-our-ishape-dataset" href="#3-our-ishape-dataset"><span class="octicon octicon-link"></span></a>3. Our iShape dataset</h2>
-<p>In this work, we present iShape, a new dataset designed for <strong>i</strong>rregular <strong>Shape</strong> instance segmentation. Our dataset consists of six sub-datasets, namely iShape-Antenna, iShape-Branch, iShape-Fence, iShape-Log, iShape-Hanger, and iShape-Wire. As shown in  picture below, each sub-dataset represents scenes of a typical irregular shape, for example, strip shape,  hollow shape, and mesh shape.</p>
-<div align="center">
+    <h2 id="3-our-ishape-dataset"><a class="anchor" name="3-our-ishape-dataset" href="#3-our-ishape-dataset"><span
+          class="octicon octicon-link"></span></a>3. Our iShape dataset</h2>
+    <p>In this work, we present iShape, a new dataset designed for <strong>i</strong>rregular <strong>Shape</strong>
+      instance segmentation. Our dataset consists of six sub-datasets, namely iShape-Antenna, iShape-Branch,
+      iShape-Fence, iShape-Log, iShape-Hanger, and iShape-Wire. As shown in picture below, each sub-dataset represents
+      scenes of a typical irregular shape, for example, strip shape, hollow shape, and mesh shape.</p>
+    <div align="center">
 
-<p><img src="image/ishape_img/ishape.png" alt=""></p>
-</div>
+      <p><img src="image/ishape_img/ishape.png" alt=""></p>
+    </div>
 
-<h3 id="download-ishape-dataset-45gb"><a class="anchor" name="download-ishape-dataset-45gb" href="#download-ishape-dataset-45gb"><span class="octicon octicon-link"></span></a>Download iShape dataset (4.5GB):</h3>
-<!-- **Download on [=> Kaggle](https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation)** -->
+    <h3 id="download-ishape-dataset-45gb"><a class="anchor" name="download-ishape-dataset-45gb"
+        href="#download-ishape-dataset-45gb"><span class="octicon octicon-link"></span></a>Download iShape dataset
+      (4.5GB):</h3>
+    <!-- **Download on [=> Kaggle](https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation)** -->
 
-<p><strong>iShape download URL:</strong>  </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://39.105.21.95:9000/ishape/ishape_dataset.tar</p>
+    <p><strong>iShape download URL:</strong> </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://39.105.21.95:9000/ishape/ishape_dataset.tar</p>
 
-<p>Or from our oss URL:  </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar</p>
+    <p>Or from our oss URL: </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar</p>
 
-<pre class="language-bash" tabindex="0"><code class="language-bash">$ md5sum ishape_dataset.tar
+    <pre class="language-bash" tabindex="0"><code class="language-bash">$ md5sum ishape_dataset.tar
 <span class="token comment"># 2b3bd15e6ec762bbc03dddc5e4bc24df</span>
 </code></pre>
-<h3 id="browse-ishape-dataset-online-with-visualization--ishape_dataset"><a class="anchor" name="browse-ishape-dataset-online-with-visualization--ishape_dataset" href="#browse-ishape-dataset-online-with-visualization--ishape_dataset"><span class="octicon octicon-link"></span></a>Browse iShape dataset online with visualization: =&gt; <a href="http://39.105.21.95:9000/ishape/">ishape_dataset</a></h3>
-<p><strong>Dataset format:</strong> iShape provides both Cityscapes and COCO style instance segmentation annotations.</p>
-<ul>
-<li>Cityscapes style: store as <code>*.png</code> files under directory <code>instance_map</code>. Similar to <code>*_instanceIds.png</code> in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel value <code>x</code> means that the pixel belongs to the instance ID is <code>x</code>.</li>
-<li>COCO style: It should be pointed out that the COCO style annotations encode masks by <a href="https://en.wikipedia.org/wiki/Run-length_encoding">Run-Length Encoding(RLE)</a>, because polygon can not represent hollow-shaped masks.</li>
-</ul>
-<!-- **Overview infomation of the iShape dataset:** 
+    <h3 id="browse-ishape-dataset-online-with-visualization--ishape_dataset"><a class="anchor"
+        name="browse-ishape-dataset-online-with-visualization--ishape_dataset"
+        href="#browse-ishape-dataset-online-with-visualization--ishape_dataset"><span
+          class="octicon octicon-link"></span></a>Browse iShape dataset online with visualization: =&gt; <a
+        href="http://39.105.21.95:9000/ishape/">ishape_dataset</a></h3>
+    <p><strong>Dataset format:</strong> iShape provides both Cityscapes and COCO style instance segmentation
+      annotations.</p>
+    <ul>
+      <li>Cityscapes style: store as <code>*.png</code> files under directory <code>instance_map</code>. Similar to
+        <code>*_instanceIds.png</code> in Cityscapes dataset, those png file are Height * Width * 16bit. Each pixel
+        value <code>x</code> means that the pixel belongs to the instance ID is <code>x</code>.</li>
+      <li>COCO style: It should be pointed out that the COCO style annotations encode masks by <a
+          href="https://en.wikipedia.org/wiki/Run-length_encoding">Run-Length Encoding(RLE)</a>, because polygon can not
+        represent hollow-shaped masks.</li>
+    </ul>
+    <!-- **Overview infomation of the iShape dataset:** 
 
 <div align="center">
 
@@ -482,318 +870,359 @@
 
 </div> -->
 
-<p><strong>Source code about the dataset:</strong></p>
-<ul>
-<li><a href="https://github.com/iShape/build_synthetic_ishape"><strong><code>build_synthetic_ishape</code></strong></a>: Source code of building iShape synthetic data.</li>
-<li><a href="https://github.com/DIYer22/bpycv"><strong><code>bpycv</code></strong></a>: Computer vision utils for open-source CG software <a href="https://www.blender.org/">Blender</a>.</li>
-</ul>
-<p><strong>Dataset license:</strong> <a href="https://creativecommons.org/publicdomain/zero/1.0/">Public domain (CC0)</a>    </p>
-<img style="width:130px" src="image/misc/Public_Domain_Mark_button.svg.png">
+    <p><strong>Source code about the dataset:</strong></p>
+    <ul>
+      <li><a
+          href="https://github.com/iShape/build_synthetic_ishape"><strong><code>build_synthetic_ishape</code></strong></a>:
+        Source code of building iShape synthetic data.</li>
+      <li><a href="https://github.com/DIYer22/bpycv"><strong><code>bpycv</code></strong></a>: Computer vision utils for
+        open-source CG software <a href="https://www.blender.org/">Blender</a>.</li>
+    </ul>
+    <p><strong>Dataset license:</strong> <a href="https://creativecommons.org/publicdomain/zero/1.0/">Public domain
+        (CC0)</a> </p>
+    <img style="width:130px" src="image/misc/Public_Domain_Mark_button.svg.png">
 
-<h2 id="4-our-baseline-arbitrary-shape-instance-segmentation"><a class="anchor" name="4-our-baseline-arbitrary-shape-instance-segmentation" href="#4-our-baseline-arbitrary-shape-instance-segmentation"><span class="octicon octicon-link"></span></a>4. Our Baseline: Arbitrary Shape Instance Segmentation</h2>
-<p style="text-align: justify"> We introduce a stronger baseline considering irregular shape in this paper, which explicitly combines perception and reasoning. Our key insight is to simulate how a person identifies an irregular object. Taking the wire shown in Figure 1 for example, one natural way is to start from a local point and gradually expand by following the wire contour and figure out the entire object. The behavior of such ``following the contour'' procedure is a process of <b>continuous iterative reasoning based on local clues</b>, which is similar to the recent affinity-based approaches . Under such observation, we propose a novel affinity-based instance segmentation baseline, called ASIS, which includes principles of generating effective and efficient affinity kernel based on dataset property to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance  <b>S</b>egmentation. Experimental results show that the proposed baseline outperforms existing state-of-the-art methods by a large margin on iShape.</p>
-
-
-<div align="center">
-
-<br>
-
-  <img style="width:705px" src="image/ishape_img/overview.png">
-
-
-<p style="width:705px; text-align: justify"><b>Overview of ASIS.</b> In the training stage, the network learns to predict the semantic segmenation as well as the affinity map. In the inference stage, first, build graph operation transforms the predicted affinity map into a sparse undirected graph by setting pixels as nodes and the affinity between pixels as edges. Then the graph merge algorithm is applied to the graph. The algorithm will cluster the pixels to yield class-agnostic instance segmentation. Finally, the class assign module will add a category with confidence to each instance using the result of semantic segmentation.</p>
-
-<br>
-
-</div>
-
-<h3 id="baseline-code-will-release-soon"><a class="anchor" name="baseline-code-will-release-soon" href="#baseline-code-will-release-soon"><span class="octicon octicon-link"></span></a><strong>Baseline code will release soon.</strong></h3>
-<h2 id="5-benchmark"><a class="anchor" name="5-benchmark" href="#5-benchmark"><span class="octicon octicon-link"></span></a>5. Benchmark</h2>
-<p>We also benchmark existing instance segmentation algorithms on iShape and find their performance degrades significantly.</p>
-<h4 id="51-experimental-results"><a class="anchor" name="51-experimental-results" href="#51-experimental-results"><span class="octicon octicon-link"></span></a>5.1 Experimental results</h4>
-<p>Qualitative results on iShape. We report the mask mmAP of six sub-datasets and the average of mmAP. To be fair, all methods use ResNet-50 as the backbone. ``w/o'' denotes ``without''.</p>
-<div align="center">
+    <h2 id="4-our-baseline-arbitrary-shape-instance-segmentation"><a class="anchor"
+        name="4-our-baseline-arbitrary-shape-instance-segmentation"
+        href="#4-our-baseline-arbitrary-shape-instance-segmentation"><span class="octicon octicon-link"></span></a>4.
+      Our Baseline: Arbitrary Shape Instance Segmentation</h2>
+    <p style="text-align: justify"> We introduce a stronger baseline considering irregular shape in this paper, which
+      explicitly combines perception and reasoning. Our key insight is to simulate how a person identifies an irregular
+      object. Taking the wire shown in Figure 1 for example, one natural way is to start from a local point and
+      gradually expand by following the wire contour and figure out the entire object. The behavior of such ``following
+      the contour'' procedure is a process of <b>continuous iterative reasoning based on local clues</b>, which is
+      similar to the recent affinity-based approaches . Under such observation, we propose a novel affinity-based
+      instance segmentation baseline, called ASIS, which includes principles of generating effective and efficient
+      affinity kernel based on dataset property to solve <b>A</b>rbitrary <b>S</b>hape <b>I</b>nstance
+      <b>S</b>egmentation. Experimental results show that the proposed baseline outperforms existing state-of-the-art
+      methods by a large margin on iShape.</p>
 
 
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th align="right">Antenna</th>
-<th align="right">Branch</th>
-<th align="right">Fence</th>
-<th align="right">Hanger</th>
-<th align="right">Log</th>
-<th align="right">Wire</th>
-<th align="right">Average</th>
-<th>Config</th>
-<th>Download</th>
-<th>Code</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SOLOv2</td>
-<td align="right">6.6</td>
-<td align="right"><strong>27.5</strong></td>
-<td align="right">0.0</td>
-<td align="right">28.8</td>
-<td align="right">22.2</td>
-<td align="right">0.0</td>
-<td align="right">14.07</td>
-<td>config</td>
-<td>model | <a href="https://drive.google.com/drive/folders/1IIRrz-w7H6cLLkiHGqqFqbaj50v0ZcKD?usp=sharing">log</a></td>
-<td><a href="https://github.com/WXinlong/SOLO">Link</a></td>
-</tr>
-<tr>
-<td>PolarMask</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">18.6</td>
-<td align="right">0.0</td>
-<td align="right">3.10</td>
-<td><a href="https://drive.google.com/drive/folders/1QbsVJe4jL-6j5Dvth-7a2mpgGYkEPk2a?usp=sharing">config</a></td>
-<td>model | <a href="https://drive.google.com/drive/folders/1QbsVJe4jL-6j5Dvth-7a2mpgGYkEPk2a?usp=sharing">log</a></td>
-<td><a href="https://github.com/xieenze/PolarMask">Link</a></td>
-</tr>
-<tr>
-<td>SpatialEmbeddings</td>
-<td align="right">38.3</td>
-<td align="right">0.0</td>
-<td align="right">0.0</td>
-<td align="right">49.8</td>
-<td align="right">20.9</td>
-<td align="right">0.0</td>
-<td align="right">18.17</td>
-<td>config</td>
-<td><a href="https://drive.google.com/drive/folders/1WzmoqaKBPcvrQOy2yX_4T103I2knx7Fj?usp=sharing">model</a> | <a href="https://drive.google.com/drive/folders/1WzmoqaKBPcvrQOy2yX_4T103I2knx7Fj?usp=sharing">log</a></td>
-<td><a href="https://github.com/davyneven/SpatialEmbeddings">Link</a></td>
-</tr>
-<tr>
-<td>Mask RCNN</td>
-<td align="right">16.9</td>
-<td align="right">4.2</td>
-<td align="right">0.0</td>
-<td align="right">22.1</td>
-<td align="right">32.6</td>
-<td align="right">0.0</td>
-<td align="right">12.63</td>
-<td>config</td>
-<td>model | <a href="https://drive.google.com/drive/folders/1CCS3xYmFvLG9FUUV-bQpbGwU4oyJowCa?usp=sharing">log</a></td>
-<td><a href="https://github.com/facebookresearch/detectron2">Link</a></td>
-</tr>
-<tr>
-<td>DETR</td>
-<td align="right">2.1</td>
-<td align="right">2.6</td>
-<td align="right">0.0</td>
-<td align="right">32.2</td>
-<td align="right">46.2</td>
-<td align="right">0.0</td>
-<td align="right">13.85</td>
-<td><a href="https://drive.google.com/drive/folders/1gYvJjMn8d5LZoc2BUMj8wGxeB57wYhwK?usp=sharing">config</a></td>
-<td>model | <a href="https://drive.google.com/drive/folders/1gYvJjMn8d5LZoc2BUMj8wGxeB57wYhwK?usp=sharing">log</a></td>
-<td><a href="https://github.com/facebookresearch/detr">Link</a></td>
-</tr>
-<tr>
-<td>GMIS*</td>
-<td align="right">67.6</td>
-<td align="right">14.9</td>
-<td align="right">30.6</td>
-<td align="right">24.8</td>
-<td align="right">63.2</td>
-<td align="right">46.1</td>
-<td align="right">41.21</td>
-<td>config</td>
-<td>model | log</td>
-<td>Link</td>
-</tr>
-<tr>
-<td>ASIS without OHEM</td>
-<td align="right">82.1</td>
-<td align="right">17.6</td>
-<td align="right">48.0</td>
-<td align="right">40.5</td>
-<td align="right">66.4</td>
-<td align="right">66.5</td>
-<td align="right">53.51</td>
-<td>config</td>
-<td>model | log</td>
-<td>Link</td>
-</tr>
-<tr>
-<td>ASIS(ours)</td>
-<td align="right"><strong>88.5</strong></td>
-<td align="right">24.6</td>
-<td align="right"><strong>60.4</strong></td>
-<td align="right"><strong>57.4</strong></td>
-<td align="right"><strong>69.4</strong></td>
-<td align="right"><strong>77.3</strong></td>
-<td align="right"><strong>62.93</strong></td>
-<td>config</td>
-<td>model | log</td>
-<td>Link</td>
-</tr>
-</tbody></table>
-</div>
+    <div align="center">
 
-<h4 id="52-qualitative-results"><a class="anchor" name="52-qualitative-results" href="#52-qualitative-results"><span class="octicon octicon-link"></span></a>5.2 Qualitative results</h4>
-<p>Click to open the big image.</p>
-<table style="overflow: hidden;">
-  <tbody>
-    <tr style="padding:0px;">
-      <th>Ground Truth</th>
-      <th>Mask RCNN</th>
-      <th>SOLOv2</th>
-      <th>Ours</th>
-    </tr>
-    <tr class="content">
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/gt/antenna/4165.jpg">
-          <img src="image/vis_tmp/gt/antenna/4165.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/maskrcnn/antenna/4165.jpg">
-          <img src="image/vis_tmp/maskrcnn/antenna/4165.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/solov2/antenna/4165.jpg">
-          <img src="image/vis_tmp/solov2/antenna/4165.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/asis/antenna/4165.jpg">
-          <img src="image/vis_tmp/asis/antenna/4165.jpg" style="">
-        </a>
-      </td>
-    </tr>
-    <tr class="content">
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/gt/branch/30.jpg">
-          <img src="image/vis_tmp/gt/branch/30.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/maskrcnn/branch/30.jpg">
-          <img src="image/vis_tmp/maskrcnn/branch/30.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/solov2/branch/30.jpg">
-          <img src="image/vis_tmp/solov2/branch/30.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/asis/branch/30.jpg">
-          <img src="image/vis_tmp/asis/branch/30.jpg" style="">
-        </a>
-      </td>
-    </tr>
-    <tr class="content">
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/gt/fence/103.jpg">
-          <img src="image/vis_tmp/gt/fence/103.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/maskrcnn/fence/103.jpg">
-          <img src="image/vis_tmp/maskrcnn/fence/103.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/solov2/fence/103.jpg">
-          <img src="image/vis_tmp/solov2/fence/103.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/asis/fence/103.jpg">
-          <img src="image/vis_tmp/asis/fence/103.jpg" style="">
-        </a>
-      </td>
-    </tr>
-    <tr class="content">
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/gt/hanger/366.jpg">
-          <img src="image/vis_tmp/gt/hanger/366.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/maskrcnn/hanger/366.jpg">
-          <img src="image/vis_tmp/maskrcnn/hanger/366.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/solov2/hanger/366.jpg">
-          <img src="image/vis_tmp/solov2/hanger/366.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/asis/hanger/366.jpg">
-          <img src="image/vis_tmp/asis/hanger/366.jpg" style="">
-        </a>
-      </td>
-    </tr>
-    <tr class="content">
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/gt/log/103.jpg">
-          <img src="image/vis_tmp/gt/log/103.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/maskrcnn/log/103.jpg">
-          <img src="image/vis_tmp/maskrcnn/log/103.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/solov2/log/103.jpg">
-          <img src="image/vis_tmp/solov2/log/103.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/asis/log/103.jpg">
-          <img src="image/vis_tmp/asis/log/103.jpg" style="">
-        </a>
-      </td>
-    </tr>
-    <tr class="content">
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/gt/wire/212.jpg">
-          <img src="image/vis_tmp/gt/wire/212.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/maskrcnn/wire/212.jpg">
-          <img src="image/vis_tmp/maskrcnn/wire/212.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/solov2/wire/212.jpg">
-          <img src="image/vis_tmp/solov2/wire/212.jpg" style="">
-        </a>
-      </td>
-      <td style="padding:0px;">
-        <a href="image/vis_tmp/asis/wire/212.jpg">
-          <img src="image/vis_tmp/asis/wire/212.jpg" style="">
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+      <br>
+
+      <img style="width:705px" src="image/ishape_img/overview.png">
 
 
+      <p style="width:705px; text-align: justify"><b>Overview of ASIS.</b> In the training stage, the network learns to
+        predict the semantic segmenation as well as the affinity map. In the inference stage, first, build graph
+        operation transforms the predicted affinity map into a sparse undirected graph by setting pixels as nodes and
+        the affinity between pixels as edges. Then the graph merge algorithm is applied to the graph. The algorithm will
+        cluster the pixels to yield class-agnostic instance segmentation. Finally, the class assign module will add a
+        category with confidence to each instance using the result of semantic segmentation.</p>
 
-<br>
-<div align="center">
-<div align="center" style="width:300px">
+      <br>
 
-<p><a href="ishape_experiment.html"><img src="image/ishape_img/result.png" alt=""></a><br>More qualitative results are <a href="ishape_experiment.html">=&gt; <strong>here</strong></a></p>
-</div>
-</div>
+    </div>
 
-<!-- 
+    <h3 id="baseline-code-will-release-soon"><a class="anchor" name="baseline-code-will-release-soon"
+        href="#baseline-code-will-release-soon"><span class="octicon octicon-link"></span></a><strong>Baseline code will
+        release soon.</strong></h3>
+    <h2 id="5-benchmark"><a class="anchor" name="5-benchmark" href="#5-benchmark"><span
+          class="octicon octicon-link"></span></a>5. Benchmark</h2>
+    <p>We also benchmark existing instance segmentation algorithms on iShape and find their performance degrades
+      significantly.</p>
+    <h4 id="51-experimental-results"><a class="anchor" name="51-experimental-results"
+        href="#51-experimental-results"><span class="octicon octicon-link"></span></a>5.1 Experimental results</h4>
+    <p>Qualitative results on iShape. We report the mask mmAP of six sub-datasets and the average of mmAP. To be fair,
+      all methods use ResNet-50 as the backbone. ``w/o'' denotes ``without''.</p>
+    <div align="center">
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th align="right">Antenna</th>
+            <th align="right">Branch</th>
+            <th align="right">Fence</th>
+            <th align="right">Hanger</th>
+            <th align="right">Log</th>
+            <th align="right">Wire</th>
+            <th align="right">Average</th>
+            <th>Config</th>
+            <th>Download</th>
+            <th>Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SOLOv2</td>
+            <td align="right">6.6</td>
+            <td align="right"><strong>27.5</strong></td>
+            <td align="right">0.0</td>
+            <td align="right">28.8</td>
+            <td align="right">22.2</td>
+            <td align="right">0.0</td>
+            <td align="right">14.07</td>
+            <td>config</td>
+            <td>model | <a
+                href="https://drive.google.com/drive/folders/1IIRrz-w7H6cLLkiHGqqFqbaj50v0ZcKD?usp=sharing">log</a></td>
+            <td><a href="https://github.com/WXinlong/SOLO">Link</a></td>
+          </tr>
+          <tr>
+            <td>PolarMask</td>
+            <td align="right">0.0</td>
+            <td align="right">0.0</td>
+            <td align="right">0.0</td>
+            <td align="right">0.0</td>
+            <td align="right">18.6</td>
+            <td align="right">0.0</td>
+            <td align="right">3.10</td>
+            <td><a
+                href="https://drive.google.com/drive/folders/1QbsVJe4jL-6j5Dvth-7a2mpgGYkEPk2a?usp=sharing">config</a>
+            </td>
+            <td>model | <a
+                href="https://drive.google.com/drive/folders/1QbsVJe4jL-6j5Dvth-7a2mpgGYkEPk2a?usp=sharing">log</a></td>
+            <td><a href="https://github.com/xieenze/PolarMask">Link</a></td>
+          </tr>
+          <tr>
+            <td>SpatialEmbeddings</td>
+            <td align="right">38.3</td>
+            <td align="right">0.0</td>
+            <td align="right">0.0</td>
+            <td align="right">49.8</td>
+            <td align="right">20.9</td>
+            <td align="right">0.0</td>
+            <td align="right">18.17</td>
+            <td>config</td>
+            <td><a href="https://drive.google.com/drive/folders/1WzmoqaKBPcvrQOy2yX_4T103I2knx7Fj?usp=sharing">model</a>
+              | <a href="https://drive.google.com/drive/folders/1WzmoqaKBPcvrQOy2yX_4T103I2knx7Fj?usp=sharing">log</a>
+            </td>
+            <td><a href="https://github.com/davyneven/SpatialEmbeddings">Link</a></td>
+          </tr>
+          <tr>
+            <td>Mask RCNN</td>
+            <td align="right">16.9</td>
+            <td align="right">4.2</td>
+            <td align="right">0.0</td>
+            <td align="right">22.1</td>
+            <td align="right">32.6</td>
+            <td align="right">0.0</td>
+            <td align="right">12.63</td>
+            <td>config</td>
+            <td>model | <a
+                href="https://drive.google.com/drive/folders/1CCS3xYmFvLG9FUUV-bQpbGwU4oyJowCa?usp=sharing">log</a></td>
+            <td><a href="https://github.com/facebookresearch/detectron2">Link</a></td>
+          </tr>
+          <tr>
+            <td>DETR</td>
+            <td align="right">2.1</td>
+            <td align="right">2.6</td>
+            <td align="right">0.0</td>
+            <td align="right">32.2</td>
+            <td align="right">46.2</td>
+            <td align="right">0.0</td>
+            <td align="right">13.85</td>
+            <td><a
+                href="https://drive.google.com/drive/folders/1gYvJjMn8d5LZoc2BUMj8wGxeB57wYhwK?usp=sharing">config</a>
+            </td>
+            <td>model | <a
+                href="https://drive.google.com/drive/folders/1gYvJjMn8d5LZoc2BUMj8wGxeB57wYhwK?usp=sharing">log</a></td>
+            <td><a href="https://github.com/facebookresearch/detr">Link</a></td>
+          </tr>
+          <tr>
+            <td>GMIS*</td>
+            <td align="right">67.6</td>
+            <td align="right">14.9</td>
+            <td align="right">30.6</td>
+            <td align="right">24.8</td>
+            <td align="right">63.2</td>
+            <td align="right">46.1</td>
+            <td align="right">41.21</td>
+            <td>config</td>
+            <td>model | log</td>
+            <td>Link</td>
+          </tr>
+          <tr>
+            <td>ASIS without OHEM</td>
+            <td align="right">82.1</td>
+            <td align="right">17.6</td>
+            <td align="right">48.0</td>
+            <td align="right">40.5</td>
+            <td align="right">66.4</td>
+            <td align="right">66.5</td>
+            <td align="right">53.51</td>
+            <td>config</td>
+            <td>model | log</td>
+            <td>Link</td>
+          </tr>
+          <tr>
+            <td>ASIS(ours)</td>
+            <td align="right"><strong>88.5</strong></td>
+            <td align="right">24.6</td>
+            <td align="right"><strong>60.4</strong></td>
+            <td align="right"><strong>57.4</strong></td>
+            <td align="right"><strong>69.4</strong></td>
+            <td align="right"><strong>77.3</strong></td>
+            <td align="right"><strong>62.93</strong></td>
+            <td>config</td>
+            <td>model | log</td>
+            <td>Link</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4 id="52-qualitative-results"><a class="anchor" name="52-qualitative-results" href="#52-qualitative-results"><span
+          class="octicon octicon-link"></span></a>5.2 Qualitative results</h4>
+    <p>Click to open the big image.</p>
+    <table style="overflow: hidden;">
+      <tbody>
+        <tr style="padding:0px;">
+          <th>Ground Truth</th>
+          <th>Mask RCNN</th>
+          <th>SOLOv2</th>
+          <th>Ours</th>
+        </tr>
+        <tr class="content">
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/gt/antenna/4165.jpg">
+              <img src="image/vis_tmp/gt/antenna/4165.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/maskrcnn/antenna/4165.jpg">
+              <img src="image/vis_tmp/maskrcnn/antenna/4165.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/solov2/antenna/4165.jpg">
+              <img src="image/vis_tmp/solov2/antenna/4165.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/asis/antenna/4165.jpg">
+              <img src="image/vis_tmp/asis/antenna/4165.jpg" style="">
+            </a>
+          </td>
+        </tr>
+        <tr class="content">
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/gt/branch/30.jpg">
+              <img src="image/vis_tmp/gt/branch/30.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/maskrcnn/branch/30.jpg">
+              <img src="image/vis_tmp/maskrcnn/branch/30.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/solov2/branch/30.jpg">
+              <img src="image/vis_tmp/solov2/branch/30.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/asis/branch/30.jpg">
+              <img src="image/vis_tmp/asis/branch/30.jpg" style="">
+            </a>
+          </td>
+        </tr>
+        <tr class="content">
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/gt/fence/103.jpg">
+              <img src="image/vis_tmp/gt/fence/103.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/maskrcnn/fence/103.jpg">
+              <img src="image/vis_tmp/maskrcnn/fence/103.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/solov2/fence/103.jpg">
+              <img src="image/vis_tmp/solov2/fence/103.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/asis/fence/103.jpg">
+              <img src="image/vis_tmp/asis/fence/103.jpg" style="">
+            </a>
+          </td>
+        </tr>
+        <tr class="content">
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/gt/hanger/366.jpg">
+              <img src="image/vis_tmp/gt/hanger/366.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/maskrcnn/hanger/366.jpg">
+              <img src="image/vis_tmp/maskrcnn/hanger/366.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/solov2/hanger/366.jpg">
+              <img src="image/vis_tmp/solov2/hanger/366.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/asis/hanger/366.jpg">
+              <img src="image/vis_tmp/asis/hanger/366.jpg" style="">
+            </a>
+          </td>
+        </tr>
+        <tr class="content">
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/gt/log/103.jpg">
+              <img src="image/vis_tmp/gt/log/103.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/maskrcnn/log/103.jpg">
+              <img src="image/vis_tmp/maskrcnn/log/103.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/solov2/log/103.jpg">
+              <img src="image/vis_tmp/solov2/log/103.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/asis/log/103.jpg">
+              <img src="image/vis_tmp/asis/log/103.jpg" style="">
+            </a>
+          </td>
+        </tr>
+        <tr class="content">
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/gt/wire/212.jpg">
+              <img src="image/vis_tmp/gt/wire/212.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/maskrcnn/wire/212.jpg">
+              <img src="image/vis_tmp/maskrcnn/wire/212.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/solov2/wire/212.jpg">
+              <img src="image/vis_tmp/solov2/wire/212.jpg" style="">
+            </a>
+          </td>
+          <td style="padding:0px;">
+            <a href="image/vis_tmp/asis/wire/212.jpg">
+              <img src="image/vis_tmp/asis/wire/212.jpg" style="">
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <br>
+    <div align="center">
+      <div align="center" style="width:300px">
+
+        <p><a href="ishape_experiment.html"><img src="image/ishape_img/result.png" alt=""></a><br>More qualitative
+          results are <a href="ishape_experiment.html">=&gt; <strong>here</strong></a></p>
+      </div>
+    </div>
+
+    <!-- 
 ## 5. Leaderboard
 
 
@@ -806,9 +1235,11 @@ If you have been successful in creating a model based on the training set and it
 </div> -->
 
 
-<h2 id="6-misc"><a class="anchor" name="6-misc" href="#6-misc"><span class="octicon octicon-link"></span></a>6. Misc</h2>
-<p>If you have any questions about iShape, feel free to submit an issue here: <a href="https://github.com/iShape/iShape.github.io/issues">issues</a>.</p>
-<!-- ## 6. ATTN
+    <h2 id="6-misc"><a class="anchor" name="6-misc" href="#6-misc"><span class="octicon octicon-link"></span></a>6. Misc
+    </h2>
+    <p>If you have any questions about iShape, feel free to submit an issue here: <a
+        href="https://github.com/iShape/iShape.github.io/issues">issues</a>.</p>
+    <!-- ## 6. ATTN
 
 <div style="text-align: justify">
 
@@ -817,16 +1248,21 @@ This dataset and code packages are free for academic usage. You can run them at 
 </div> -->
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGRJZ0J17J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NGRJZ0J17J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-  gtag('config', 'G-NGRJZ0J17J');
-</script>
-</div></body>
-  
-  
-  <div style="all: initial;"><div id="__hcfy__" style="all: initial;"></div></div></html>
+      gtag('config', 'G-NGRJZ0J17J');
+    </script>
+  </div>
+</body>
+
+
+<div style="all: initial;">
+  <div id="__hcfy__" style="all: initial;"></div>
+</div>
+
+</html>
