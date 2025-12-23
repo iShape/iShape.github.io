@@ -99,7 +99,7 @@ In this work, we present iShape, a new dataset designed for **i**rregular **Shap
 <!-- **Download on [=> Kaggle](https://www.kaggle.com/diyer22/ishape-irregular-shape-instance-segmentation)** -->
 
 **iShape download URL:**  
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://113.44.140.251:9000/ishape/ishape_dataset.tar </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; http://121.36.40.207:9000/ishape/ishape_dataset.tar </p>
 
 Or backup URL:  
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://ylshare.oss-cn-shanghai.aliyuncs.com/ishape_dataset.tar </p>
